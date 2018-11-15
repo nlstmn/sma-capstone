@@ -19,11 +19,11 @@
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -59,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+            <state relative-caret-position="85">
+              <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <marker date="1542297879777" expanded="true" signature="116:117" ph="..." />
@@ -141,7 +141,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="509" />
     <option name="y" value="149" />
     <option name="width" value="696" />
@@ -152,7 +152,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,23 +164,11 @@
               <item name="sma-capstone" type="462c0819:PsiDirectoryNode" />
               <item name="sma_core" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="sma-capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sma-capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="sma_core" type="462c0819:PsiDirectoryNode" />
-              <item name="brinfluence" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sma-capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sma-capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="sma_core" type="462c0819:PsiDirectoryNode" />
-              <item name="brinfluence" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,13 +299,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sma_core/BrandCategory">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sma_core/BrandCategory" />
     <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        <state relative-caret-position="85">
+          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <marker date="1542297879777" expanded="true" signature="116:117" ph="..." />
