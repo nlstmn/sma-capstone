@@ -44,7 +44,8 @@ class Comment(models.Model):
     comment = models.CharField(max_length=300)
 
 
-class Hashtag(models.Model):    hashtag = models.CharField(max_length=70)
+class Hashtag(models.Model):
+    hashtag = models.CharField(max_length=70)
 
 
 class HashtagComment(models.Model):
