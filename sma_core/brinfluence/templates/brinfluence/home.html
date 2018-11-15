@@ -1,13 +1,113 @@
 {% extends 'brinfluence/_layout.html' %}
-
-{% block title %}Brinfluence{% endblock %}
-
 {% block content %}
 {% if user.is_authenticated %}
-    Hi {{ user.username }}!
-    <p><a href="{% url 'logout' %}">logout</a></p>
+<!--Hi {{ user.username }}!
+<p><a href="{% url 'logout' %}">logout</a></p>-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Home CSS -->
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<!-- Brinfluence page navigation bar -->
+<div class="home-navbar">
+    <a href="{% url 'logout' %}">Logout</a>
+    <a href="#contact">Contact</a>
+    <a href="#services">Services</a>
+    <a href="#products">Products</a>
+    <a class="active" href="#home">Home</a>
+    <a style="float: left; padding-left: 2rem; font-size: 19px;" href="#home">
+        <i class="fas fa-globe"></i>&nbsp;&nbsp;&nbsp;Social Media Analysis</a>
+</div>
+
+<!-- Search
+<form class="navbar-form navbar-right" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-default">Search</button>
+</form>-->
+<div class="homepage">
+    <div class="articles">
+        <div class="article">
+        <span>
+            <a href="#">Completely Synergize</a>
+        </span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. </p>
+        </div>
+
+        <div class="article">
+        <span>
+            <a href="#">Dynamically Procrastinate</a>
+        </span>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="footer-blurb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 footer-blurb-item">
+                        <h3><span class="glyphicon glyphicon-fire"></span> Dynamically Procrastinate</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+                            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                            voluptatem sequi nesciunt. </p>
+                        <p><a class="btn btn-default" href="#">Procrastinate</a></p>
+                    </div>
+                    <div class="col-sm-4 footer-blurb-item">
+                        <h3><span class="glyphicon glyphicon-cloud-upload"></span> Efficiently Unleash</h3>
+                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+                            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                            voluptatem. </p>
+                        <p><a class="btn btn-default" href="#">Unleash</a></p>
+                    </div>
+                    <div class="col-sm-4 footer-blurb-item">
+                        <h3><span class="glyphicon glyphicon-leaf"></span> Completely Synergize</h3>
+                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+                            nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
+                            voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
+                            voluptas nulla pariatur?</p>
+                        <p><a class="btn btn-default" href="#">Synergize</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
+    <p>Copyright &copy; By Dario Pejic & Liana Nassanova </p>
+    <p>Copyright &copy; Capstone Project Fall 2018 </p>
+</div>
+
+</body>
+
+</html>
+
 {% else %}
-    <p>You are not logged in</p>
-    <a href="{% url 'login' %}">Login</a>
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">Login</a>
 {% endif %}
 {% endblock %}
