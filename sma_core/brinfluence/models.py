@@ -1,81 +1,55 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
 
-# Create your models here.
+class UserManager(models.Manager):
+    def create_user(self, biography, email, gender, name, pic_url, username, birthdate):
+        user = self.create(biography=biography, email=email, gender=gender, name=name, profile_pic_url=pic_url,
+                           username=username, date_of_birth=birthdate)
+        user.save()
+
 
 class User(models.Model):
-    full_name = models.CharField(max_length=70)
-    username = models.CharField(max_length=80, unique=True)
-    birthdate = models.DateField(auto_now=False, auto_now_add=False)
+    biography = models.CharField(max_length=350)
+    email = models.EmailField(max_length=254)
     gender = models.CharField(max_length=6)
-    email = models.EmailField(max_length=254, unique=True)
-    country = models.CharField(max_length=75)
-    city = models.CharField(max_length=189)
-
-
-class BrandCategory(models.Model):
-    category = models.CharField(max_length=100)
+    name = models.CharField(max_length=70)
+    profile_pic_url = models.CharField(max_length=300)
+    username = models.CharField(max_length=80, unique=True)
+    date_of_birth = models.DateField(auto_now=False, auto_now_add=False)
+    objects = UserManager()
 
 
 class Brand(models.Model):
-    name = models.CharField(max_length=70)
-    category = models.ForeignKey(BrandCategory, on_delete=models.CASCADE)
+    biography = models.CharField(max_length=350)
+    email = models.EmailField(max_length=254)
+    gender = models.CharField(max_length=11)
+    name = models.CharField(max_length=150)
+    profile_pic_url = models.CharField(max_length=300)
+    username = models.CharField(max_length=80, unique=True)
+    business_category = models.CharField(max_length=80)
+    business_city = models.CharField(max_length=70)
+    business_email = models.EmailField(max_length=254)
 
 
-class Location(models.Model):
-    continent = models.CharField(max_length=20)
-    country = models.CharField(max_length=75)
-
-
-class BrandLocation(models.Model):
-    brand = models.ForeignKey(Brand, related_name='located_in', on_delete=models.CASCADE)
-    location = models.ForeignKey(Location, related_name='has_brand', on_delete=models.CASCADE)
-
-
-class Post(models.Model):
+class UserMedia(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=140)
-    date_created = models.DateTimeField()
+    caption = models.CharField(max_length=800)
+    location = models.CharField(max_length=300)
 
 
-class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+class BrandMedia(models.Model):
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+    caption = models.CharField(max_length=800)
+    location = models.CharField(max_length=300)
+
+
+class UserComment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment = models.CharField(max_length=300)
+    comment = models.CharField(max_length=800)
+    commented_on = models.CharField(max_length=80)
 
 
-class Hashtag(models.Model):    hashtag = models.CharField(max_length=70)
-
-
-class HashtagComment(models.Model):
-    hashtag = models.ForeignKey(Hashtag, on_delete=models.CASCADE)
-    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
-
-
-class HashtagPost(models.Model):
-    hashtag = models.ForeignKey(Hashtag, on_delete=models.CASCADE)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-
-
-class Emoji(models.Model):
-    codes = models.CharField(max_length=50)
-    char = models.CharField(max_length=50)
-    name = models.CharField(max_length=200)
-    keywords = models.CharField(max_length=200)
-
-
-class EmojiComment(models.Model):
-    emoji = models.ForeignKey(Emoji, on_delete=models.CASCADE)
-    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
-
-
-class EmojiPost(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-    emoji = models.ForeignKey(Emoji, on_delete=models.CASCADE)
-
-
-class UserFollowing(models.Model):
-    user = models.ForeignKey(User, related_name='following', on_delete=models.CASCADE)
-    following = models.ForeignKey(User, related_name='followed_by', on_delete=models.CASCADE)
+class BrandComment(models.Model):
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+    comment = models.CharField(max_length=800)
+    commented_on = models.CharField(max_length=80)
