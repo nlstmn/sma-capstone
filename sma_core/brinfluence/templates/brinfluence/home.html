@@ -2,88 +2,249 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-<!-- Brinfluence page navigation bar -->
+<!-- HOME PAGE NAV BAR -->
 <div class="home-navbar">
-    <a href="{% url 'logout' %}">Logout</a>
-    <a href="#contact">Contact</a>
+    <a href="{% url 'logout' %}" id="home-button" class="logout-button">Logout</a>
+    <a href="#contact" id="navbar-references-contact">Contact</a>
     <a href="#services">Services</a>
-    <a href="#products">Products</a>
     <a class="active" href="#home">Home</a>
     <a style="float: left; padding-left: 2rem; font-size: 19px;" href="#home">
         <i class="fas fa-globe"></i>&nbsp;&nbsp;&nbsp;Social Media Analysis</a>
 </div>
 
-<!-- Search
-<form class="navbar-form navbar-right" role="search">
-    <div class="form-group">
-        <input type="text" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-default">Search</button>
-</form>-->
 <div class="homepage">
     <div class="articles">
+
         <div class="article">
-        <span>
-            <a href="#">Completely Synergize</a>
-        </span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. </p>
+            <span class="article-headline">ABOUT US</span>
+            <p>Social Media Analysis project is the application of AI algorithms on social media data;
+                it is a web application that will give influencers and brands an opportunity to have a handy
+                tool which will act like a bridge between those two and offer better and optimized correlation.</p>
         </div>
 
         <div class="article">
-        <span>
-            <a href="#">Dynamically Procrastinate</a>
-        </span>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.</p>
+            <span class="article-headline">WHY TO CHOOSE US</span>
+            <p>Our idea is something what Instagram algorithm has for all users except advanced
+                algorithm for business pages which makes it quite time consuming for influencers and brands
+                to go all over the recommendations to find what they are looking for. From our perspective,
+                almost no practical attempt has been made by Instagram for the purpose of linking brands and
+                influencers.</p>
         </div>
     </div>
 
-    <div class="content">
-        <div class="footer-blurb">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4 footer-blurb-item">
-                        <h3><span class="glyphicon glyphicon-fire"></span> Dynamically Procrastinate</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-                            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                            voluptatem sequi nesciunt. </p>
-                        <p><a class="btn btn-default" href="#">Procrastinate</a></p>
-                    </div>
-                    <div class="col-sm-4 footer-blurb-item">
-                        <h3><span class="glyphicon glyphicon-cloud-upload"></span> Efficiently Unleash</h3>
-                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-                            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                            voluptatem. </p>
-                        <p><a class="btn btn-default" href="#">Unleash</a></p>
-                    </div>
-                    <div class="col-sm-4 footer-blurb-item">
-                        <h3><span class="glyphicon glyphicon-leaf"></span> Completely Synergize</h3>
-                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-                            nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
-                            voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-                            voluptas nulla pariatur?</p>
-                        <p><a class="btn btn-default" href="#">Synergize</a></p>
-                    </div>
+    <div class="homepage-content">
 
+        <div class="col-sm-4 footer-blurb-item">
+            <h3>How does it work?</h3>
+            <p>Our project is targeting specifically instagram users, so any user who has a business page
+                and working via
+                or through instagram has to be either brand or influencer. We are collecting your data (with
+                your permission!)
+                and helping finding customers depending on the content which you are creating and managing.
+                All you have to do
+                is to tell us: are you brand or influencer?</p>
+            <div class="btn-group">
+                <button class="btn" id="btn-brand">I AM BRAND</button>
+                <button class="btn" id="btn-influencer">I AM INFLUENCER</button>
+            </div>
+        </div>
+
+        <!-- BRAND MODAL -->
+        <div id="brand-modal" class="brand-modal">
+            <div class="brand-modal-content">
+                <div>
+                    <span class="close">&times;</span>
+                    <div class="login-span"
+                         style="border-bottom: 1px black solid; padding: 1rem; font-size: 25px; display: flex; justify-content: center;">
+                        Choose your brand
+                    </div>
+                    <div>
+                        <ul class="brand-list">
+                            <li id="cinephilia">@cinephilia_universe</li>
+                            <li id="ferhatmrgl">@ferhatmrgl</li>
+                            <li id="lashes">@lashes_begaim</li>
+                        </ul>
+                    </div>
+                    <div style="border-top: 1px solid black !important; padding: 1rem 0; width: 100%; display: flex; justify-content: center;">
+                        <button class="next-button" type="submit">Next</button>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="col-sm-4 footer-blurb-item">
+                <h3>Efficiently Unleash</h3>
+                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                    velit,
+                    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
+                    quaerat
+                    voluptatem. </p>
+                <p><a class="btn btn-default" href="#">Unleash</a></p>
+            </div>
+        </div>
+
+        <div class="col-sm-4 footer-blurb-item">
+            <h3>Completely Synergize</h3>
+            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+                nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
+                voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
+                voluptas nulla pariatur?</p>
+            <p><a class="btn btn-default" href="#">Synergize</a></p>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-headline"><a href="#" id="footer-references-rules">Software &amp; Security</a> | <a href="#"
+                                                                                                           id="footer-references-contact">Contact</a>
+    </div>
+    <div class="footer-headline">By Dario Pejic & Liana Nassanova</div>
+    <div class="footer-headline">Copyright &copy; Capstone Project Fall 2018</div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="brand-modal">
+    <div class="brand-modal-content">
+        <div>
+            <span class="close">&times;</span>
+            <div class="login-span"
+                 style="border-bottom: 1px black solid; padding: 1rem; font-size: 25px; display: flex; justify-content: center;">
+                Contact us anytime
+            </div>
+            <div class="contact-modal-content">
+                <span style="font-weight: bold;">Dario Pejić</span><br/>
+                <span style="color: green;">E-mail:</span> dario.pejic@stu.bahcesehir.edu.tr<br/>
+                <span style="color: green;">Phone:</span> +387 60 34 93 699<br/><br/>
+                <span style="font-weight: bold;">Liana Nassanova</span><br/>
+                <span style="color: green;">E-mail:</span> liana.nassanova@stu.bahcesehir.edu.tr<br/>
+                <span style="color: green;">Phone:</span> +90 553 124 34 04
             </div>
         </div>
     </div>
 </div>
 
-<div class="footer">
-    <p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
-    <p>Copyright &copy; By Dario Pejic & Liana Nassanova </p>
-    <p>Copyright &copy; Capstone Project Fall 2018 </p>
-</div>
+<script>
+
+// BRAND
+var bmodal = document.getElementById('brand-modal');
+var bbtn = document.getElementById("btn-brand");
+var bspan = document.getElementsByClassName("close")[0];
+bbtn.onclick = function() {
+    bmodal.style.display = "block";
+}
+bspan.onclick = function() {
+    bmodal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == bmodal) {
+        bmodal.style.display = "none";
+    }
+}
+
+// CONTACT
+var cmodal = document.getElementById('contact-modal');
+var cbtn = document.getElementById("footer-references-contact");
+var cspan = document.getElementsByClassName("close")[0];
+cbtn.onclick = function() {
+    cmodal.style.display = "block";
+}
+cspan.onclick = function() {
+    cmodal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == cmodal) {
+        cmodal.style.display = "none";
+    }
+}
+
+</script>
+
+<style>
+
+/* BRAND MODAL */
+.brand-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.6);
+}
+
+.brand-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    width: 60%;
+    border-radius: 10px;
+}
+
+/* THE CLOSE BUTTON  */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: -2.5rem;
+    padding: .2rem 1rem 0 0;
+    position: relative;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
 
 {% else %}
-<p>You are not logged in</p>
-<a href="{% url 'login' %}">Login</a>
+
+<!-- LOG OUT MODAL -->
+<div id="home-modal" class="home-modal">
+    <div class="modal-content">
+        <div>
+            <form class="home-form"
+                  style="display: flex; flex-direction: column; align-items: center; padding-bottom: 1rem;"
+                  method="post">
+                <div class="home-span"
+                     style="padding: 1rem; font-size: 25px; display: flex; justify-content: center;">
+                    You are not logged in
+                </div>
+                <div style="border-top: 1px solid black !important; padding-top: 1rem; width: 100%; display: flex; justify-content: center;">
+                    <a class="home-button" href="{% url 'login' %}">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+
+// LOG OUT
+var modal = document.getElementById('home-modal');
+var btn = document.getElementById("home-button");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
 {% endif %}
 {% endblock %}

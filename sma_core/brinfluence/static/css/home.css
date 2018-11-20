@@ -10,32 +10,43 @@ html{
     width: 100%;
 }
 
-/* TOP NAVIGATION BAR */
-.home-navbar{
-  overflow: hidden;
-  background-color: black;
-  margin: -8px;
-  padding-right: 2rem;
-}
-.home-navbar a{
-  float: right;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 1rem;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
-}
-.home-navbar a:hover {
-  color: white;
-}
-.home-navbar a.active {
-  color: #4CAF50;
+.contact-modal-content{
+    padding: 1rem;
 }
 
-/* HOME PAGE */
+/* TOP NAVIGATION BAR */
+.home-navbar{
+    overflow: hidden;
+    background-color: black;
+    margin: -8px;
+    padding-right: 2rem;
+}
+.home-navbar a{
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+.home-navbar a:hover {
+    color: white;
+}
+.home-navbar a.active {
+    color: #4CAF50;
+}
+
+/* HOME PAGE CONTENT */
 .homepage{
     width: 100%;
     display: flex;
+    padding-bottom: 1.5rem;
+}
+.homepage-content{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: .5rem 0 0 1.5rem;
 }
 .articles{
     display: flex;
@@ -44,16 +55,17 @@ html{
     margin: 1.5rem 0 0 1rem;
 }
 .article{
-    border: 1px solid rgba(255, 255, 255, 0.7);
+    border: 5px solid rgba(255, 255, 255, 0.7);
     padding: 1rem 1rem 0 1rem;
     border-radius: 5px;
     margin-bottom: 1rem;
+    background-color: #f2f2f2;
 }
-.content{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: .5rem 0 0 1.5rem;
+.article-headline{
+    text-align: center;
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
 }
 .footer{
     display: flex;
@@ -61,4 +73,104 @@ html{
     margin: -8px;
     align-items: center;
     flex-direction: column;
+    padding-bottom: .8rem;
 }
+
+
+/* LOG OUT MODAL */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    width: 40%;
+    border-radius: 10px;
+    margin-top: 10rem;
+    box-shadow: 0 0 100px 15px #aaaaaa;
+}
+.home-button{
+    border: none;
+    padding: .6rem 1rem;
+    background-color: #4CAF50 !important;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px !important;
+    text-decoration: none;
+}
+.home-button:hover{
+    background-color: #81c784;
+}
+.home-button:active{
+    background-color: #357a38;
+}
+.logout-button{
+    float: right !important;
+    color: #bf0000 !important;
+    text-align: center !important;
+    padding: 1rem !important;
+    text-decoration: none !important;
+}
+.btn-group .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px green solid;
+    border-radius: 10px;
+}
+.btn-group .btn:not(:last-child) {
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+}
+.btn-group .btn:last-child {
+    border-radius: 0 10px 10px 0;
+}
+.btn-group .btn:hover {
+    background-color: #3e8e41;
+}
+#btn-influencer{
+    margin-left: -5px !important;
+}
+.footer-headline{
+    padding-top: .8rem;
+}
+#footer-references-rules, #footer-references-contact{
+    text-decoration: none;
+    color: #4CAF50;
+}
+.next-button{
+    border: none;
+    padding: .6rem 1rem;
+    background-color: #4CAF50 !important;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px !important;
+}
+.brand-list{
+    list-style: none;
+    margin: 0 40px 0 0;
+    font-size: 15px;
+}
+.brand-list li{
+    cursor: pointer;
+    border-bottom: 1px darkgray solid;
+    padding: 1.5rem 0 1.5rem 3.5rem;
+}
+.brand-list li:last-child{
+    border-bottom: none;
+}
+li#cinephilia {
+    background: url('cinephilia_universe.jpg') no-repeat left;
+}
+li#ferhatmrgl {
+    background: url('ferhatmrgl.jpg') no-repeat left;
+}
+li#lashes {
+    background: url('lashes_begaim.jpg') no-repeat left;
+}
+
+
+
