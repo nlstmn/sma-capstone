@@ -42,3 +42,7 @@ def remove_emojis(string):
 
     return string
 
+
+def escape_new_line(string):
+    string = string.replace("\n", "\\n")
+    return string
