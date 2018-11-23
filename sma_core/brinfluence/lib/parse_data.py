@@ -1,7 +1,10 @@
 import json
+import codecs
 from brinfluence.lib import data_utils
 
 
+# Returns all post's captions written by specific user
+# (parsed captions without special characters, numbers and emojis)
 def get_user_media_captions(path):
     path = path + "\media.json"
 
@@ -23,11 +26,14 @@ def get_user_media_captions(path):
     return decoded_data
 
 
+# Returns list of all shared media for a specific user
+# containing caption & location of all pictures (as originally posted)
 def get_user_media_list(path):
     path = path + "\media.json"
 
-    with open(path, mode="r", encoding="utf-8") as f:
-        data = json.load(f)
+    data = json.load(codecs.open(path, 'r', 'utf-8-sig'))
+    # with open(path, mode="r", encoding="utf-8") as f:
+    #   data = json.load(f)
 
     post = []
     media = []
@@ -46,6 +52,7 @@ def get_user_media_list(path):
     return media
 
 
+# Returns list of all emojis user has used in its posts
 def get_user_media_emojis(path):
     path = path + "\media.json"
 
@@ -63,13 +70,15 @@ def get_user_media_emojis(path):
     return decoded_data
 
 
+# Returns all comments made by specific user
+# (parsed comments without special characters, numbers and emojis)
 def get_user_comments(path):
     path = path + "\comments.json"
 
-    with open(path, mode="r", encoding="utf-8") as f:
-        data = json.load(f)
+    data = json.load(codecs.open(path, 'r', 'utf-8-sig'))
+    # with open(path, mode="r", encoding="utf-8") as f:
+    #   data = json.load(f)
 
-    print('\n')
     decoded_data = ""
 
     for item in data['media_comments']:
@@ -86,11 +95,14 @@ def get_user_comments(path):
     return decoded_data
 
 
+# Returns list of all comments made by a specific user
+# containing comment & commented_on fields (as originally commented)
 def get_user_comments_list(path):
     path = path + "\comments.json"
 
-    with open(path, mode="r", encoding="utf-8") as f:
-        data = json.load(f)
+    data = json.load(codecs.open(path, 'r', 'utf-8-sig'))
+    # with open(path, mode="r", encoding="utf-8") as f:
+    #    data = json.load(f)
 
     comment = []
     media_comments = []
@@ -105,11 +117,13 @@ def get_user_comments_list(path):
     return media_comments
 
 
+# Returns list of all emojis user has used in the comments he/she made
 def get_user_comments_emojis(path):
     path = path + "\comments.json"
 
-    with open(path, mode="r", encoding="utf-8") as f:
-        data = json.load(f)
+    data = json.load(codecs.open(path, 'r', 'utf-8-sig'))
+    # with open(path, mode="r", encoding="utf-8") as f:
+    #    data = json.load(f)
 
     decoded_data = ""
 
@@ -122,18 +136,29 @@ def get_user_comments_emojis(path):
     return decoded_data
 
 
-def get_username(path):
+# Returns username field, given a path to user, from profile.json file
+def get_username(path_to_user):
+    path_to_user = path_to_user + "\\profile.json"
+
+    with open(path_to_user, mode="r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    username = data['username']
+    return username
+
+
+# Returns user all profile data given a path to user
+def get_profile_data(path):
     path = path + "\profile.json"
 
     with open(path, mode="r", encoding="utf-8") as f:
         data = json.load(f)
 
-    decoded_data = data['username']
-    return decoded_data
+    return data
 
 
-def get_profile_data(path):
-    path = path + "\profile.json"
+def get_user_media_json(path):
+    path = path + "\media.json"
 
     with open(path, mode="r", encoding="utf-8") as f:
         data = json.load(f)
