@@ -1,10 +1,9 @@
 import os
 from brinfluence.lib import parse_data
 
-'''
-generates parsed(stripped) data about user and puts it in sma_data folder inside every user's directory
-with files that contain media, comments and emojis data that user has shared on Instagram
-'''
+
+# Generates parsed(stripped) data about user and puts the data in sma_data folder inside every user's/brand's
+# directory with files that contain media, comments and emojis data that user has shared on Instagram
 def generate_sma_data(root_dir):
     for subdir in os.listdir(root_dir):
         if subdir == 'Brands':
@@ -21,9 +20,9 @@ def generate_sma_data(root_dir):
 
                 write_sma_data_to_file(path_to_user)
 
-'''
-returns 2D matrix of users/brands' sma_data with pattern: username, media, comments, media_emojis, comments_emojis
-'''
+
+# Returns 2D matrix of users/brands' sma_data with columns: username, media, comments, media_emojis, comments_emojis
+# User Type can be 'Brands' or 'Users"
 def retrieve_sma_data(root_dir, user_type):
     row = []
     data_matrix = []
@@ -62,6 +61,7 @@ def retrieve_sma_data(root_dir, user_type):
     return data_matrix
 
 
+# Creates new sma_data folder and writes sma_data to a file given a path
 def write_sma_data_to_file(path):
     new_dir = path + "\sma_data"
 
@@ -77,3 +77,11 @@ def write_sma_data_to_file(path):
         print(user_media_emojis, file=open(new_dir + "\media_emojis.txt", 'w', encoding="utf-8"))
         print(user_comments_data, file=open(new_dir + "\comments.txt", 'w', encoding="utf-8"))
         print(user_comments_emojis, file=open(new_dir + "\comments_emojis.txt", 'w', encoding="utf-8"))
+
+
+# Returns .txt file (doc) from a user's sma_data (doc_name can be media.txt, comments.txt etc)
+def get_doc(path_to_user, doc_name):
+    with open(path_to_user + "\\sma_data\\" + doc_name, 'r', encoding="utf-8") as f:
+        data = f.read().replace('\n', '')
+
+    return data
