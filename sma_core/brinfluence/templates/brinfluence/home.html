@@ -5,10 +5,10 @@
 <!-- HOME PAGE NAV BAR -->
 <div class="home-navbar">
     <a href="{% url 'logout' %}" id="home-button" class="logout-button">Logout</a>
-    <a href="#contact" id="navbar-references-contact">Contact</a>
-    <a href="#services">Services</a>
-    <a class="active" href="#home">Home</a>
-    <a style="float: left; padding-left: 2rem; font-size: 19px;" href="#home">
+    <a href="#" id="navbar-references-contact">Contact</a>
+    <a href="#">Services</a>
+    <a class="active" href="#">Home</a>
+    <a style="float: left; padding-left: 2rem; font-size: 19px;" href="#">
         <i class="fas fa-globe"></i>&nbsp;&nbsp;&nbsp;Social Media Analysis</a>
 </div>
 
@@ -30,6 +30,7 @@
                 almost no practical attempt has been made by Instagram for the purpose of linking brands and
                 influencers.</p>
         </div>
+
     </div>
 
     <div class="homepage-content">
@@ -53,44 +54,106 @@
         <div id="brand-modal" class="brand-modal">
             <div class="brand-modal-content">
                 <div>
-                    <span class="close">&times;</span>
+                    <span class="brand-close">&times;</span>
                     <div class="login-span"
                          style="border-bottom: 1px black solid; padding: 1rem; font-size: 25px; display: flex; justify-content: center;">
                         Choose your brand
                     </div>
                     <div>
-                        <ul class="brand-list">
+                        <ul class="tabcontent" id="1">
                             <li id="cinephilia">@cinephilia_universe</li>
                             <li id="ferhatmrgl">@ferhatmrgl</li>
                             <li id="lashes">@lashes_begaim</li>
+                            <li id="deadby13">@deadby13</li>
                         </ul>
                     </div>
-                    <div style="border-top: 1px solid black !important; padding: 1rem 0; width: 100%; display: flex; justify-content: center;">
-                        <button class="next-button" type="submit">Next</button>
+                    <div>
+                        <ul class="tabcontent" id="2">
+                            <li id="liakan">@liakan.photo</li>
+                            <li id="lianadev">@liana.dev</li>
+                        </ul>
+                    </div>
+                    <div style="border-top: 1px solid black !important; padding: 1rem 0; width: 100%; text-align: center;">
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, '1')" id="defaultOpen">1</button>
+                            <button class="tablinks" onclick="openCity(event, '2')">2</button>
+                            <button class="tablinks" onclick="openCity(event, '3')">3</button>
+                        </div>
+                        <div>
+                            <button class="next-button" type="submit">Next</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div>
-            <div class="col-sm-4 footer-blurb-item">
-                <h3>Efficiently Unleash</h3>
-                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-                    velit,
-                    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam
-                    quaerat
-                    voluptatem. </p>
-                <p><a class="btn btn-default" href="#">Unleash</a></p>
+        <!-- INFLUENCER MODAL -->
+        <div id="influencer-modal" class="brand-modal">
+            <div class="brand-modal-content">
+                <div>
+                    <span class="influencer-close">&times;</span>
+                    <div class="login-span"
+                         style="border-bottom: 1px black solid; padding: 1rem; font-size: 25px; display: flex; justify-content: center;">
+                        Choose your influencer
+                    </div>
+                    <div>
+                        <ul class="tabcontent" id="first">
+                            <li id="ahmadchourbaji">@ahmadchourbaji</li>
+                            <li id="bjenneta">@b.jenneta</li>
+                            <li id="lianansan">@liana.nsan</li>
+                            <li id="nesval">@n.e.s_val</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="tabcontent" id="second">
+                            <li id="zayed">@zayed_kotayba</li>
+                            <li id="dario">@dario.p_95</li>
+                            <li id="oompa">@0ompa_lo0mpa</li>
+                        </ul>
+                    </div>
+                    <div style="border-top: 1px solid black !important; padding: 1rem 0; width: 100%; text-align: center;">
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'first')" id="influencer-defaultOpen">1
+                            </button>
+                            <button class="tablinks" onclick="openCity(event, 'second')">2</button>
+                            <button class="tablinks" onclick="openCity(event, 'third')">3</button>
+                        </div>
+                        <div>
+                            <button class="next-button" type="submit">Next</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="col-sm-4 footer-blurb-item">
-            <h3>Completely Synergize</h3>
-            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-                nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea
-                voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-                voluptas nulla pariatur?</p>
-            <p><a class="btn btn-default" href="#">Synergize</a></p>
+
+        <div>
+            <div class="col-sm-4 footer-blurb-item">
+                <h3>Main Features</h3>
+                <p>Just a few reasons to get the SMA product...</p>
+                <div class="features-btn-group">
+                    <div class="container-features-btn">
+                        <button class="features-btn"><i class="far fa-clock"></i></button>
+                        <span class="features-btn-span">Stop Wasting Your Time</span>
+                    </div>
+                    <div class="container-features-btn">
+                        <button class="features-btn"><i class="fas fa-wrench"></i></button>
+                        <span class="features-btn-span">Easy To Use</span>
+                    </div>
+                    <div class="container-features-btn">
+                        <button class="features-btn"><i class="fas fa-share-alt"></i></button>
+                        <span class="features-btn-span">Advanced API</span>
+                    </div>
+                    <div class="container-features-btn">
+                        <button class="features-btn"><i class="fas fa-chart-line"></i></button>
+                        <span class="features-btn-span">Boost Your Income</span>
+                    </div>
+                    <div class="container-features-btn">
+                        <button class="features-btn"><i class="far fa-bell"></i></button>
+                        <span class="features-btn-span">Dynamic reporting and response</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -104,11 +167,38 @@
     <div class="footer-headline">Copyright &copy; Capstone Project Fall 2018</div>
 </div>
 
+<!-- SOFTWARE SECURITY MODAL -->
+<div id="software-modal" class="brand-modal">
+    <div class="brand-modal-content">
+        <div>
+            <span class="software-close">&times;</span>
+            <div class="login-span"
+                 style="border-bottom: 1px black solid; padding: 1rem; font-size: 25px; display: flex; justify-content: center;">
+                Software Design and Security
+            </div>
+            <div class="contact-modal-content">
+                <span>
+                    Intentions are to have developed platform where our users can interact with the system
+                    in a simple matter. Most of the time, searching and filtering are automated and do not
+                    need a human input (except for the user’s profile data which is set up just once while choosing).
+                    Additionally, platform is perceived to have an option of searching and suggesting
+                    influencers and/or brands with the help of user intervention for cases when user wants to steer
+                    away and get somewhat different data which might be specific for a given day, promotions,
+                    keyword etc.
+                    As from security side, no data is meant to be used in any other way than specified by
+                    software. Information is not used without having the user know about it and without
+                    gaining the permission (opting-in) from user to utilize his/her data.
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="brand-modal">
     <div class="brand-modal-content">
         <div>
-            <span class="close">&times;</span>
+            <span class="contact-close">&times;</span>
             <div class="login-span"
                  style="border-bottom: 1px black solid; padding: 1rem; font-size: 25px; display: flex; justify-content: center;">
                 Contact us anytime
@@ -127,48 +217,166 @@
 
 <script>
 
-// BRAND
-var bmodal = document.getElementById('brand-modal');
-var bbtn = document.getElementById("btn-brand");
-var bspan = document.getElementsByClassName("close")[0];
-bbtn.onclick = function() {
-    bmodal.style.display = "block";
+// BRAND MODAL
+var modal = document.getElementById('brand-modal');
+var btn = document.getElementById("btn-brand");
+var span = document.getElementsByClassName("brand-close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
 }
-bspan.onclick = function() {
-    bmodal.style.display = "none";
-}
-window.onclick = function(event) {
-    if (event.target == bmodal) {
-        bmodal.style.display = "none";
-    }
+span.onclick = function() {
+    modal.style.display = "none";
 }
 
-// CONTACT
-var cmodal = document.getElementById('contact-modal');
-var cbtn = document.getElementById("footer-references-contact");
-var cspan = document.getElementsByClassName("close")[0];
-cbtn.onclick = function() {
-    cmodal.style.display = "block";
+// INFLUENCER MODAL
+var influencer_modal = document.getElementById('influencer-modal');
+var influencer_btn = document.getElementById("btn-influencer");
+var influencer_span = document.getElementsByClassName("influencer-close")[0];
+influencer_btn.onclick = function() {
+    influencer_modal.style.display = "block";
 }
-cspan.onclick = function() {
-    cmodal.style.display = "none";
+influencer_span.onclick = function() {
+    influencer_modal.style.display = "none";
 }
-window.onclick = function(event) {
-    if (event.target == cmodal) {
-        cmodal.style.display = "none";
+
+// FOOTER CONTACT MODAL
+var contact_modal = document.getElementById('contact-modal');
+var contact_btn = document.getElementById("footer-references-contact");
+var contact_span = document.getElementsByClassName("contact-close")[0];
+contact_btn.onclick = function() {
+    contact_modal.style.display = "block";
+}
+contact_span.onclick = function() {
+    contact_modal.style.display = "none";
+}
+
+// NAVBAR CONTACT MODAL
+var contact_modal = document.getElementById('contact-modal');
+var contact_btn = document.getElementById("navbar-references-contact");
+var contact_span = document.getElementsByClassName("contact-close")[0];
+contact_btn.onclick = function() {
+    contact_modal.style.display = "block";
+}
+contact_span.onclick = function() {
+    contact_modal.style.display = "none";
+}
+
+// SOFTWARE SECURITY MODAL
+var software_modal = document.getElementById('software-modal');
+var software_btn = document.getElementById("footer-references-rules");
+var software_span = document.getElementsByClassName("software-close")[0];
+software_btn.onclick = function() {
+    software_modal.style.display = "block";
+}
+software_span.onclick = function() {
+    software_modal.style.display = "none";
+}
+
+// INFLUENCER TABS
+function openInfluencer(influencer_evt, influencerName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
     }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(influencerName).style.display = "block";
+    influencer_evt.currentTarget.className += " active";
 }
+document.getElementById("influencer-defaultOpen").click();
+
+// BRAND TABS
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
 
 </script>
 
 <style>
+
+/*FEATURES BUTTONS*/
+.features-btn-group .features-btn {
+    background-color: transparent;
+    text-align: center;
+    text-decoration: none;
+    font-size: 35px;
+    cursor: pointer;
+    border: none;
+    border: 1px green solid;
+    border-radius: 10px;
+}
+.features-btn{
+    margin: 0 1.2rem 1rem 0;
+    padding: 1.2rem 0;
+}
+.features-btn-group{
+    display: flex;
+}
+.container-features-btn{
+    display:flex;
+    flex-direction: column;
+    width: 18%;
+}
+.features-btn-span{
+    font-size: 15px;
+    text-align: center;
+    padding-right: .9rem;
+}
+
+/*TABS*/
+.tab button:hover {
+    background-color: #3e8e41;
+}
+.tab button.active {
+    background-color: green;
+}
+.tablinks{
+    background-color: #4CAF50;
+    color: white;
+    padding: 7.5px 12px;
+    text-align: center;
+    border-radius: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px green solid;
+}
+.tab{
+    padding-bottom: 1rem;
+}
+.tabcontent{
+    list-style: none;
+    margin: 0 40px 0 0;
+    font-size: 15px;
+}
+.tabcontent li{
+    cursor: pointer;
+    border-bottom: 1px darkgray solid;
+    padding: 1.5rem 0 1.5rem 3.5rem;
+}
+.tabcontent li:last-child{
+    border-bottom: none;
+}
 
 /* BRAND MODAL */
 .brand-modal {
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 75px;
     left: 0;
     top: 0;
     width: 100%;
@@ -177,7 +385,6 @@ window.onclick = function(event) {
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.6);
 }
-
 .brand-modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -186,7 +393,7 @@ window.onclick = function(event) {
 }
 
 /* THE CLOSE BUTTON  */
-.close {
+.brand-close, .contact-close, .software-close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
@@ -197,8 +404,26 @@ window.onclick = function(event) {
     padding: .2rem 1rem 0 0;
     position: relative;
 }
-.close:hover,
-.close:focus {
+.influencer-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: -2.5rem;
+    padding: .2rem 1rem 0 0;
+    position: relative;
+}
+.brand-close:hover,
+.brand-close:focus,
+.influencer-close:hover,
+.influencer-close:focus,
+.contact-close:hover,
+.contact-close:focus,
+.software-close:hover,
+.software-close:focus
+{
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -244,6 +469,14 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+
+
+
+
+
+
 </script>
 
 {% endif %}

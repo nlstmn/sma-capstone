@@ -10,11 +10,11 @@ html{
     width: 100%;
 }
 
-.contact-modal-content{
-    padding: 1rem;
-}
-
-/* TOP NAVIGATION BAR */
+/**
+*
+TOP NAVIGATION BAR
+*
+**/
 .home-navbar{
     overflow: hidden;
     background-color: black;
@@ -36,7 +36,11 @@ html{
     color: #4CAF50;
 }
 
-/* HOME PAGE CONTENT */
+/**
+*
+HOME PAGE CONTENT
+*
+**/
 .homepage{
     width: 100%;
     display: flex;
@@ -45,8 +49,8 @@ html{
 .homepage-content{
     display: flex;
     flex-direction: column;
-    width: 60%;
-    margin: .5rem 0 0 1.5rem;
+    width: 70%;
+    margin: .5rem 1.5rem 0 1.5rem;
 }
 .articles{
     display: flex;
@@ -67,6 +71,12 @@ html{
     color: #4CAF50;
     font-weight: bold;
 }
+
+/**
+*
+FOOTER
+*
+**/
 .footer{
     display: flex;
     border-top: 1px darkgray solid;
@@ -75,9 +85,49 @@ html{
     flex-direction: column;
     padding-bottom: .8rem;
 }
+.footer-headline{
+    padding-top: .8rem;
+}
+#footer-references-rules, #footer-references-contact{
+    text-decoration: none;
+    color: #4CAF50;
+}
 
+/**
+*
+BRAND INFLUENCER BUTTONS
+*
+**/
+.btn-group .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px green solid;
+    border-radius: 10px;
+}
+.btn-group .btn:not(:last-child) {
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+}
+.btn-group .btn:last-child {
+    border-radius: 0 10px 10px 0;
+}
+.btn-group .btn:hover {
+    background-color: #3e8e41;
+}
+#btn-influencer{
+    margin-left: -5px !important;
+}
 
-/* LOG OUT MODAL */
+/**
+*
+LOGOUT MODAL
+*
+**/
 .modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -109,37 +159,12 @@ html{
     padding: 1rem !important;
     text-decoration: none !important;
 }
-.btn-group .btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    border: 1px green solid;
-    border-radius: 10px;
-}
-.btn-group .btn:not(:last-child) {
-    border-right: none;
-    border-radius: 10px 0 0 10px;
-}
-.btn-group .btn:last-child {
-    border-radius: 0 10px 10px 0;
-}
-.btn-group .btn:hover {
-    background-color: #3e8e41;
-}
-#btn-influencer{
-    margin-left: -5px !important;
-}
-.footer-headline{
-    padding-top: .8rem;
-}
-#footer-references-rules, #footer-references-contact{
-    text-decoration: none;
-    color: #4CAF50;
-}
+
+/**
+*
+BRAND MODAL
+*
+**/
 .next-button{
     border: none;
     padding: .6rem 1rem;
@@ -148,19 +173,6 @@ html{
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px !important;
-}
-.brand-list{
-    list-style: none;
-    margin: 0 40px 0 0;
-    font-size: 15px;
-}
-.brand-list li{
-    cursor: pointer;
-    border-bottom: 1px darkgray solid;
-    padding: 1.5rem 0 1.5rem 3.5rem;
-}
-.brand-list li:last-child{
-    border-bottom: none;
 }
 li#cinephilia {
     background: url('cinephilia_universe.jpg') no-repeat left;
@@ -171,6 +183,60 @@ li#ferhatmrgl {
 li#lashes {
     background: url('lashes_begaim.jpg') no-repeat left;
 }
+li#deadby13 {
+    background: url('deadby13.jpg') no-repeat left;
+}
+li#liakan {
+    background: url('liakan.photo.jpg') no-repeat left;
+}
+li#lianadev {
+    background: url('liana.dev.jpg') no-repeat left;
+}
+li#cinephilia:hover, li#ferhatmrgl:hover, li#lashes:hover, li#deadby13:hover, li#liakan:hover, li#lianadev:hover{
+    color: lightgray;
+}
+li#cinephilia:active, li#ferhatmrgl:active, li#lashes:active, li#deadby13:active, li#liakan:active, li#lianadev:active{
+    color: green;
+}
 
+/**
+*
+INFLUENCER MODAL
+*
+**/
+li#ahmadchourbaji {
+    background: url('ahmadchourbaji.jpg') no-repeat left;
+}
+li#bjenneta {
+    background: url('b.jenneta.jpg') no-repeat left;
+}
+li#lianansan {
+    background: url('liana.nsan.jpg') no-repeat left;
+}
+li#nesval {
+    background: url('n.e.s_val.jpg') no-repeat left;
+}
+li#zayed {
+    background: url('zayed_kotayba.jpg') no-repeat left;
+}
+li#dario {
+    background: url('dario.p_95.jpg') no-repeat left;
+}
+li#oompa {
+    background: url('0ompa_lo0mpa.jpg') no-repeat left;
+}
+li#ahmadchourbaji:hover, li#bjenneta:hover, li#lianansan:hover, li#nesval:hover, li#zayed:hover, li#dario:hover, li#oompa:hover{
+    color: lightgray;
+}
+li#ahmadchourbaji:active, li#bjenneta:active, li#lianansan:active, li#nesval:active, li#zayed:active, li#dario:active, li#oompa:active{
+    color: green;
+}
 
-
+/**
+*
+CONTACT MODAL
+*
+**/
+.contact-modal-content{
+    padding: 1rem;
+}
