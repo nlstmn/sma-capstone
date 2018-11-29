@@ -1,0 +1,23 @@
+{% extends 'brinfluence/_layout.html' %}
+
+{% block content %}
+
+{{ brand.username }}
+<h3>Recommended users: </h3>
+<table>
+    <th>
+        User
+    </th>
+    <th>
+        Similarity
+    </th>
+    {% for user in recommended_users %}
+    <tr>
+        <td>{{ user.0}}</td>
+        <td>{{ user.1 }} %</td>
+    </tr>
+    </td>
+    {% endfor %}
+</table>
+
+{% endblock %}

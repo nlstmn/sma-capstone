@@ -1,0 +1,25 @@
+{% extends 'brinfluence/_layout.html' %}
+
+{% block content %}
+
+<input type="button" onclick="location.href='recommended/'" value="Recommended brands" />
+
+<h3>Name: {{ user.name }}</h3>
+
+<h3>Biography</h3>
+<span>{{ user.biography }}</span>
+
+<h3>Media</h3>
+{% for post in media %}
+    <p>{{ post.caption }}</p>
+    <p>{{ post.location }}</p>
+    <hr />
+{% endfor %}
+
+<h3>Comments</h3>
+{% for comment in comments %}
+    <p>{{ comment.comment }}</p>
+    <p>{{ comment.commented_on }}</p>
+    <hr />
+{% endfor %}
+{% endblock %}

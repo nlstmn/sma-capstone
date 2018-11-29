@@ -61,23 +61,32 @@
                     </div>
                     <div>
                         <ul class="tabcontent" id="1">
+                            {% for brand in brands %}
+                            <li onclick="location.href='/brinfluence/brand/{{ brand.username }}'" style="background: url({{ brand.profile_pic_url }}) no-repeat left;">@{{ brand.username }}</li>
+                            {% endfor %}
+                            <!--
                             <li id="cinephilia">@cinephilia_universe</li>
                             <li id="ferhatmrgl">@ferhatmrgl</li>
                             <li id="lashes">@lashes_begaim</li>
                             <li id="deadby13">@deadby13</li>
+                            -->
                         </ul>
                     </div>
+                    <!--
                     <div>
                         <ul class="tabcontent" id="2">
                             <li id="liakan">@liakan.photo</li>
                             <li id="lianadev">@liana.dev</li>
                         </ul>
                     </div>
+                    -->
                     <div style="border-top: 1px solid black !important; padding: 1rem 0; width: 100%; text-align: center;">
                         <div class="tab">
                             <button class="tablinks" onclick="openCity(event, '1')" id="defaultOpen">1</button>
+                            <!--
                             <button class="tablinks" onclick="openCity(event, '2')">2</button>
                             <button class="tablinks" onclick="openCity(event, '3')">3</button>
+                            -->
                         </div>
                         <div>
                             <button class="next-button" type="submit">Next</button>
@@ -98,12 +107,18 @@
                     </div>
                     <div>
                         <ul class="tabcontent" id="first">
+                            {% for user in users %}
+                            <li onclick="location.href='/brinfluence/influencer/{{ user.username }}'" style="background: url({{ user.profile_pic_url }}) no-repeat left;">@{{ user.username }}</li>
+                            {% endfor %}
+                            <!--
                             <li id="ahmadchourbaji">@ahmadchourbaji</li>
                             <li id="bjenneta">@b.jenneta</li>
                             <li id="lianansan">@liana.nsan</li>
                             <li id="nesval">@n.e.s_val</li>
+                            -->
                         </ul>
                     </div>
+                    <!--
                     <div>
                         <ul class="tabcontent" id="second">
                             <li id="zayed">@zayed_kotayba</li>
@@ -111,12 +126,15 @@
                             <li id="oompa">@0ompa_lo0mpa</li>
                         </ul>
                     </div>
+                    -->
                     <div style="border-top: 1px solid black !important; padding: 1rem 0; width: 100%; text-align: center;">
                         <div class="tab">
                             <button class="tablinks" onclick="openCity(event, 'first')" id="influencer-defaultOpen">1
                             </button>
+                            <!--
                             <button class="tablinks" onclick="openCity(event, 'second')">2</button>
                             <button class="tablinks" onclick="openCity(event, 'third')">3</button>
+                            -->
                         </div>
                         <div>
                             <button class="next-button" type="submit">Next</button>
@@ -214,6 +232,7 @@
         </div>
     </div>
 </div>
+
 
 <script>
 
@@ -469,13 +488,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
-
-
-
-
-
-
 
 </script>
 
