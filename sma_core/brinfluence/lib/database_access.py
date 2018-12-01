@@ -6,6 +6,7 @@ django.setup()
 
 from brinfluence.lib import parse_data
 from brinfluence.lib import data_utils
+from brinfluence.lib import static_data
 from brinfluence.models import *
 
 '''
@@ -13,7 +14,7 @@ Updates database if new user/s or brand/s is added to dataset folder. Info: No s
 Gets original data from .json files of users & brands and initializes corresponding model and its fields.
 Using Manager class of each model, user/brand data is entered into database.
 '''
-root_dir = input("Enter root dir:")
+root_dir = static_data.get_dataset_root_dir()
 
 print("New users/brands are being added to database. Please wait...")
 # Iterate through every sub folder of root directory | subdir=['Users','Brands']
@@ -52,7 +53,11 @@ for subdir in os.listdir(root_dir):
 
                 profile_pic_url = data['profile_pic_url']
                 username = data['username']
-                business_category = data['business_category']
+
+                try:
+                    business_category = data['business_category']
+                except KeyError:
+                    business_category = "unspecified"
 
                 try:
                     business_city = data['business_city']
@@ -168,3 +173,5 @@ for subdir in os.listdir(root_dir):
 
                     # Create brand comment object and add it to database
                     UserComment.objects.create_user_comment(user_object, comment_text, commented_on)
+
+print("\nNew users/brands have been successfully added to database.")

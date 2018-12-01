@@ -1,11 +1,14 @@
-from brinfluence.lib import data
+from brinfluence.lib import data, static_data
 
-print("Enter path to a dataset directory such as C:\\Users\hp\Desktop\Instagram Dataset")
-print("This directory should contain directories of different users/brands with their Instagram data inside it.")
-root_dir = input('Enter a path :')
+print("Root dir is a path to a dataset directory such as C:\\Users\hp\Desktop\Instagram Dataset")
+print("This directory should contain directories of different Users/Brands with their Instagram data inside it.")
+root_dir = static_data.get_dataset_root_dir()
 
+print("\nGenerating sma_data for all users/brands...")
 data.generate_sma_data(root_dir)
+print("\nsma_data has been successfully generated.")
 
+'''
 data_matrix = data.retrieve_sma_data(root_dir, 'Brands')
 
 print('\n')
@@ -16,4 +19,5 @@ for row in data_matrix:
     print("Media emojis: " + row[3])
     print("Comments emojis: " + row[4])
     print('\n')
+'''
 
