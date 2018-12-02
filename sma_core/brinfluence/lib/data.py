@@ -1,4 +1,5 @@
 import os
+import shutil
 from brinfluence.lib import parse_data
 
 
@@ -95,6 +96,29 @@ def retrieve_user_sma_data(root_dir, user_type, username):
         row.append(comments_emojis)
 
     return row
+
+
+def delete_sma_data(root_dir):
+    for subdir in os.listdir(root_dir):
+        if subdir == 'Brands':
+            path = root_dir + "\Brands"
+            for brand in os.listdir(path):
+                path_to_brand = path + "\\" + brand
+
+                try:
+                    shutil.rmtree(path_to_brand + "\\sma_data")
+                except FileNotFoundError:
+                    pass
+
+        if subdir == 'Users':
+            path = root_dir + "\\Users"
+            for user in os.listdir(path):
+                path_to_user = path + "\\" + user
+
+                try:
+                    shutil.rmtree(path_to_user + "\\sma_data")
+                except FileNotFoundError:
+                    pass
 
 
 # Creates new sma_data folder and writes sma_data to a file given a path

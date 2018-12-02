@@ -4,6 +4,13 @@ print("Root dir is a path to a dataset directory such as C:\\Users\hp\Desktop\In
 print("This directory should contain directories of different Users/Brands with their Instagram data inside it.")
 root_dir = static_data.get_dataset_root_dir()
 
+print("\nEnter Y for yes. Any other key for no.")
+option = input("Do you want to delete old sma_data first? ")
+
+if option == 'Y':
+    data.delete_sma_data(root_dir)
+    print("Old sma_data has been deleted.")
+
 print("\nGenerating sma_data for all users/brands...")
 data.generate_sma_data(root_dir)
 print("\nsma_data has been successfully generated.")

@@ -34,7 +34,7 @@ def lemmatize(string):
 
 # Removes special characters from a string
 def remove_special_char(string):
-    char_to_erase = "\"\n!#$%&'()*+,-./:;<=>?@[\]^_`{|}~️🤗🏻‍⋯’•"
+    char_to_erase = "\"\n!#$%&'()*+,-./:;<=>?@[\]^_`{|}~️🤗🏻‍🏼⋯’•"
 
     for char in char_to_erase:
         string = string.replace(char, "")
