@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0eab2f2f-eef5-4007-a4db-bf46672f9b3f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sma_core/brinfluence/lib/data_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/sma_core/brinfluence/lib/data_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sma_core/brinfluence/lib/database_access.py" beforeDir="false" afterPath="$PROJECT_DIR$/sma_core/brinfluence/lib/database_access.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sma_core/brinfluence/lib/sma_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/sma_core/brinfluence/lib/sma_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sma_core/brinfluence/lib/models/brand_model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sma_core/brinfluence/lib/models/user_model" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sma_core/brinfluence/lib/parse_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/sma_core/brinfluence/lib/parse_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sma_core/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/sma_core/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +20,7 @@
     <session id="2031448056">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="38" />
+          <entry key="project.closed" value="41" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
@@ -29,15 +33,15 @@
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.22" value="5" />
           <entry key="project.open.time.23" value="3" />
-          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.24" value="2" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.30" value="2" />
           <entry key="project.open.time.31" value="2" />
           <entry key="project.open.time.32" value="1" />
-          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.34" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.40" value="1" />
-          <entry key="project.opened" value="40" />
+          <entry key="project.opened" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -49,7 +53,7 @@
           <entry key="html" value="26" />
           <entry key="js" value="1" />
           <entry key="json" value="1" />
-          <entry key="py" value="83" />
+          <entry key="py" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -59,7 +63,7 @@
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="83" />
+          <entry key="Python" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -67,14 +71,14 @@
           <entry key="dummy" value="74" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="2660" />
-          <entry key="py" value="39368" />
+          <entry key="py" value="40962" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="2660" />
           <entry key="PLAIN_TEXT" value="75" />
-          <entry key="Python" value="39368" />
+          <entry key="Python" value="40962" />
         </counts>
       </usages-collector>
     </session>
@@ -82,69 +86,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/templates/brinfluence/brand/profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/templates/brinfluence/brand/recommended.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/static_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/doc2vec.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/sma_data.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+              <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/database_access.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="176" column="9" selection-start-line="176" selection-start-column="9" selection-end-line="176" selection-end-column="9" />
+            <state relative-caret-position="17">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+                <marker date="1543524364825" expanded="true" signature="378:379" ph="..." />
+                <marker date="1543524364825" expanded="true" signature="3524:3525" ph="..." />
               </folding>
             </state>
           </provider>
@@ -163,19 +121,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/templates/brinfluence/influencer/profile.html">
+        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/parse_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="493">
+              <caret line="98" column="53" selection-start-line="98" selection-start-column="53" selection-end-line="98" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/database_access.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="123" column="20" selection-start-line="123" selection-start-column="20" selection-end-line="123" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/templates/brinfluence/influencer/recommended.html">
+        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/data_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+            <state relative-caret-position="157">
+              <caret line="41" column="17" selection-start-line="36" selection-start-column="61" selection-end-line="37" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/nlp_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="867">
+              <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,8 +173,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -235,9 +223,7 @@
         <option value="$PROJECT_DIR$/sma_core/sma_core/settings.py" />
         <option value="$PROJECT_DIR$/sma_core/brinfluence/models.py" />
         <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/utils.py" />
-        <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/data_utils.py" />
         <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/bow.py" />
-        <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/parse_data.py" />
         <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/nlp_utils.py" />
         <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/nlp.py" />
         <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/test2.py" />
@@ -261,11 +247,14 @@
         <option value="$PROJECT_DIR$/sma_core/brinfluence/templates/brinfluence/influencer/recommended.html" />
         <option value="$PROJECT_DIR$/sma_core/brinfluence/templates/brinfluence/brand/recommended.html" />
         <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/sma_data.py" />
+        <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/train_data.py" />
+        <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/parse_data.py" />
+        <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/data_utils.py" />
         <option value="$PROJECT_DIR$/sma_core/brinfluence/lib/database_access.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="205" />
     <option name="y" value="70" />
     <option name="width" value="1026" />
@@ -276,7 +265,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -327,45 +315,13 @@
               <item name="sma-capstone" type="b2602c69:ProjectViewProjectNode" />
               <item name="sma-capstone" type="462c0819:PsiDirectoryNode" />
               <item name="sma_core" type="462c0819:PsiDirectoryNode" />
-              <item name="brinfluence" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sma-capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sma-capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="sma_core" type="462c0819:PsiDirectoryNode" />
-              <item name="brinfluence" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="brinfluence" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sma-capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sma-capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="sma_core" type="462c0819:PsiDirectoryNode" />
-              <item name="brinfluence" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="brinfluence" type="462c0819:PsiDirectoryNode" />
-              <item name="brand" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sma-capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sma-capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="sma_core" type="462c0819:PsiDirectoryNode" />
-              <item name="brinfluence" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="brinfluence" type="462c0819:PsiDirectoryNode" />
-              <item name="influencer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sma-capstone" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sma-capstone" type="462c0819:PsiDirectoryNode" />
-              <item name="sma_core" type="462c0819:PsiDirectoryNode" />
               <item name="sma_core" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,7 +353,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sma_data">
+  <component name="RunManager" selected="Python.database_access">
+    <configuration name="data_utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="sma-capstone" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sma_core/brinfluence/lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sma_core/brinfluence/lib/data_utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="database_access" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="sma-capstone" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -482,7 +459,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="train_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="sma-capstone" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -494,30 +471,9 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sma_core/brinfluence/lib/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sma_core/brinfluence/lib/train_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_tfidf" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="sma-capstone" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sma_core/brinfluence/lib" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sma_core/brinfluence/lib/test_tfidf.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -527,18 +483,18 @@
     <list>
       <item itemvalue="Python.doc2vec" />
       <item itemvalue="Python.nlp" />
-      <item itemvalue="Python.test_tfidf" />
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.database_access" />
       <item itemvalue="Python.sma_data" />
+      <item itemvalue="Python.train_data" />
+      <item itemvalue="Python.data_utils" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.sma_data" />
         <item itemvalue="Python.database_access" />
+        <item itemvalue="Python.sma_data" />
+        <item itemvalue="Python.train_data" />
+        <item itemvalue="Python.data_utils" />
         <item itemvalue="Python.nlp" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.test_tfidf" />
       </list>
     </recent_temporary>
   </component>
@@ -566,14 +522,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49873418" visible="true" weight="0.18377976" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49873418" visible="true" weight="0.18377976" />
       <window_info id="Structure" order="1" sideWeight="0.5025381" side_tool="true" weight="0.18377976" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3535188" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3535188" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -756,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/data_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-625">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/test_tfidf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -770,31 +718,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/test.py">
+    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/templates/brinfluence/brand/recommended.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="98" column="14" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/parse_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1003">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/nlp_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+        <state relative-caret-position="119">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -814,15 +741,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/templates/brinfluence/influencer/recommended.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="89">
           <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/templates/brinfluence/brand/recommended.html">
+    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        <state relative-caret-position="-75">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="98" column="14" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -830,6 +764,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/doc2vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/train_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/nlp_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -843,19 +801,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/doc2vec.py">
+    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/parse_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+        <state relative-caret-position="493">
+          <caret line="98" column="53" selection-start-line="98" selection-start-column="53" selection-end-line="98" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/views.py">
+    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/data_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="157">
+          <caret line="41" column="17" selection-start-line="36" selection-start-column="61" selection-end-line="37" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1543524364825" expanded="true" signature="378:379" ph="..." />
+            <marker date="1543524364825" expanded="true" signature="3524:3525" ph="..." />
           </folding>
         </state>
       </provider>
@@ -863,14 +836,14 @@
     <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/sma_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sma_core/brinfluence/lib/database_access.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="176" column="9" selection-start-line="176" selection-start-column="9" selection-end-line="176" selection-end-column="9" />
+        <state relative-caret-position="191">
+          <caret line="123" column="20" selection-start-line="123" selection-start-column="20" selection-end-line="123" selection-end-column="20" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

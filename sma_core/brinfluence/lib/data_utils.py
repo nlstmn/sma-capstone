@@ -1,10 +1,40 @@
 import emoji
+import nltk
 import re
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
 
+
+# Removes stopwords from a string
+def remove_stopwords(string):
+    cached_stopwords = stopwords.words()
+    word_list = word_tokenize(string)
+    filtered_words = []
+
+    for word in word_list:
+        if word not in cached_stopwords:
+            filtered_words.append(word)
+
+    filtered_string = ""
+    for word in filtered_words:
+        filtered_string += " " + word
+
+    return filtered_string
+
+
+def lemmatize(string):
+    wordnet_lemmatizer = WordNetLemmatizer()
+    word_list = word_tokenize(string)
+
+    for word in word_list:
+        string = string.replace(word, wordnet_lemmatizer.lemmatize(word))
+
+    return string
 
 # Removes special characters from a string
 def remove_special_char(string):
-    char_to_erase = "\"\n!#$%&'()*+,-./:;<=>?@[\]^_`{|}~️🤗⋯"
+    char_to_erase = "\"\n!#$%&'()*+,-./:;<=>?@[\]^_`{|}~️🤗🏻‍⋯’•"
 
     for char in char_to_erase:
         string = string.replace(char, "")

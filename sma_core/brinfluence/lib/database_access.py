@@ -121,7 +121,11 @@ for subdir in os.listdir(root_dir):
             if username not in saved_users:
                 data = parse_data.get_profile_data(path + "\\" + user)
 
-                biography = data['biography']
+                try:
+                    biography = data['biography']
+                except KeyError:
+                    biography = "no biography"
+
                 email = data['email']
                 gender = data['gender']
 

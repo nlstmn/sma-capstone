@@ -4,7 +4,7 @@ from brinfluence.lib import data_utils
 
 
 # Returns all post's captions written by specific user
-# (parsed captions without special characters, numbers and emojis)
+# (parsed captions without stopwords, special characters, numbers and emojis)
 def get_user_media_captions(path):
     path = path + "\media.json"
 
@@ -18,10 +18,12 @@ def get_user_media_captions(path):
 
     decoded_data = data_utils.remove_special_char(decoded_data)
     decoded_data = data_utils.remove_emojis(decoded_data)
-    decoded_data = data_utils.remove_multiple_whitespace(decoded_data)
     decoded_data = data_utils.remove_numbers(decoded_data)
 
     decoded_data = decoded_data.lower()
+    decoded_data = data_utils.remove_stopwords(decoded_data)
+    decoded_data = data_utils.remove_multiple_whitespace(decoded_data)
+    decoded_data = data_utils.lemmatize(decoded_data)
 
     return decoded_data
 
@@ -71,7 +73,7 @@ def get_user_media_emojis(path):
 
 
 # Returns all comments made by specific user
-# (parsed comments without special characters, numbers and emojis)
+# (parsed comments without stopwords, special characters, numbers and emojis)
 def get_user_comments(path):
     path = path + "\comments.json"
 
@@ -87,10 +89,14 @@ def get_user_comments(path):
     decoded_data = data_utils.remove_user_tags(decoded_data)
     decoded_data = data_utils.remove_special_char(decoded_data)
     decoded_data = data_utils.remove_emojis(decoded_data)
+    decoded_data = data_utils.remove_stopwords(decoded_data)
     decoded_data = data_utils.remove_multiple_whitespace(decoded_data)
     decoded_data = data_utils.remove_numbers(decoded_data)
 
     decoded_data = decoded_data.lower()
+    decoded_data = data_utils.remove_stopwords(decoded_data)
+    decoded_data = data_utils.remove_multiple_whitespace(decoded_data)
+    decoded_data = data_utils.lemmatize(decoded_data)
 
     return decoded_data
 
@@ -157,6 +163,7 @@ def get_profile_data(path):
     return data
 
 
+# Returns media.json for a specific user
 def get_user_media_json(path):
     path = path + "\media.json"
 
