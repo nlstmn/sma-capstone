@@ -2,24 +2,89 @@
 
 {% block content %}
 
-<input type="button" onclick="location.href='recommended/'" value="Recommended brands" />
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-<h3>Name: {{ user.name }}</h3>
+<div>
+    {% include "brinfluence/tabs.html" %}
+</div>
 
-<h3>Biography</h3>
-<span>{{ user.biography }}</span>
+<head>
+    <title>SMA | Influencer</title>
+</head>
 
-<h3>Media</h3>
-{% for post in media %}
-    <p>{{ post.caption }}</p>
-    <p>{{ post.location }}</p>
-    <hr />
-{% endfor %}
+<div class="profile-header">
+    <div class="profile-article-top">
+        <button class="profile-page-avatar"
+                style="background: url({{ user.profile_pic_url }})">
+        </button>
 
-<h3>Comments</h3>
-{% for comment in comments %}
-    <p>{{ comment.comment }}</p>
-    <p>{{ comment.commented_on }}</p>
-    <hr />
-{% endfor %}
+        <div class="profile-page-article">
+            <h3>@{{ user.username }}</h3>
+            <span class="profile-article-caption">Name:</span> {{ user.name }}<br/><br/>
+            <span class="profile-article-caption">Biography:</span><br/><br/>
+            <span>{{ user.biography }}</span>
+        </div>
+    </div>
+
+    <div class="profile-article-recom">
+        <button class="profile-recom-button" onclick="location.href='recommended/'">
+            <h3>RECOMMENDED USERS<br/><br/><i class="far fa-hand-pointer fa-lg"></i></h3>
+        </button>
+    </div>
+</div>
+
+<div class="profile-article-bottom">
+    <span class="profile-article-caption-margin-bottom">Media: (The last 5 posts)</span>
+    {% for post in media|slice:":5" %}
+    <div class="profile-border-separator">
+        <span class="profile-article-caption-black"><i class="far fa-edit"></i>&nbsp;&nbsp;Post:</span>
+        {{ post.caption }}<br/><br/>
+        <span class="profile-article-caption-black"><i class="fas fa-search-location"></i>&nbsp;&nbsp;Location:</span>
+        {{ post.location }}
+    </div>
+    {% endfor %}
+
+    <span class="profile-article-caption-margin-top">Comments: (The last 5 comments)</span>
+    {% for comment in comments|slice:":5" %}
+    <div class="profile-border-separator">
+        <span class="profile-article-caption-black"><i class="far fa-comment"></i>&nbsp;&nbsp;Comment:</span>
+        {{ comment.comment }}<br/><br/>
+        <span class="profile-article-caption-black"><i class="far fa-user-circle"></i>&nbsp;&nbsp;Commented on:</span>
+        @{{ comment.commented_on }}
+    </div>
+    {% endfor %}
+</div>
+
+<style>
+.profile-article-caption-black{
+    color: black;
+    font-weight: bold;
+}
+.profile-article-caption-margin-bottom{
+    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.profile-article-caption-margin-top{
+    color: #4CAF50;
+    font-weight: bold;
+    padding: 1rem 0;
+    border-top: 1px darkgray solid;
+}
+.profile-article-bottom{
+    margin: 0 1rem 0 1rem;
+    border: 5px solid rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+}
+</style>
+
 {% endblock %}

@@ -6,26 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta charset="UTF-8">
-    <title>Log in</title>
+
+    <title>SMA | Login</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Login CSS -->
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    <link rel="stylesheet" hrsef="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
 </head>
 <body>
 
-<!-- Home page navigation bar -->
 <div class="home-navbar">
-    <a href="#contact">Contact</a>
-    <a href="#services">Services</a>
-    <a href="#products">Products</a>
-    <a class="active" href="#home">Home</a>
-    <a style="float: left; padding-left: 2rem; font-size: 19px;" href="#home">
+    <a href="{% url 'logout' %}" id="home-button" class="logout-button">Logout</a>
+    <a href="#" id="navbar-references-contact">Contact</a>
+    <a class="active" href="#">Home</a>
+    <a style="float: left; padding-left: 2rem; font-size: 19px;" href="#">
         <i class="fas fa-globe"></i>&nbsp;&nbsp;&nbsp;Social Media Analysis</a>
 </div>
 
@@ -84,12 +83,15 @@ window.onclick = function(event) {
     }
 }
 
+
 </script>
 
 <style>
 #id_password, #id_username{
     border: none;
     font-size: 18px;
+    border-radius: 10px;
+    background-color: lightgray;
 }
 
 /* THE CLOSE BUTTON  */
@@ -110,6 +112,7 @@ window.onclick = function(event) {
     text-decoration: none;
     cursor: pointer;
 }
+
 
 </style>
 

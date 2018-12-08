@@ -1,0 +1,13 @@
+{% extends 'brinfluence/_layout.html' %}
+
+{% block content %}
+
+<div class="home-navbar">
+    <a href="{% url 'logout' %}" id="home-button" class="logout-button">Logout</a>
+    <a href="#" id="navbar-references-contact">Contact</a>
+    <a class="active" href="#">Home</a>
+    <a style="float: left; padding-left: 2rem; font-size: 19px;" href="#">
+        <i class="fas fa-globe"></i>&nbsp;&nbsp;&nbsp;Social Media Analysis</a>
+</div>
+
+{% endblock %}

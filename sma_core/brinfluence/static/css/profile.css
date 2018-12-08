@@ -1,0 +1,110 @@
+.profile-header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.profile-article-top{
+    margin: 1.5rem 1rem 0 1rem;
+    border: 5px solid rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+}
+.profile-article-recom{
+    margin: 1.5rem 1rem 0 0;
+    border: 5px solid rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: #f2f2f2;
+    width: 30%;
+}
+.profile-recom-button{
+    border: none;
+    width: 100%;
+    height: 100%;
+    background-color: #4CAF50;
+    border: 1px green solid;
+    border-radius: 10px;
+    color: white;
+}
+.profile-page-avatar{
+    width: 8.3rem;
+    height: 8.3rem;
+    border: none;
+    border-radius: 100%;
+}
+.profile-page-article{
+    margin: -1rem 0 0 2rem;
+    width: 70%;
+}
+.profile-article-caption{
+    color: #4CAF50;
+    font-weight: bold;
+}
+.profile-article-caption-margin-bottom{
+    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.profile-article-caption-margin-top{
+    color: #4CAF50;
+    font-weight: bold;
+    padding: 1rem 0;
+    border-top: 1px green solid;
+}
+.profile-article-caption-black{
+    color: black;
+    font-weight: bold;
+}
+.profile-article-bottom{
+    margin: 0 1rem 0 1rem;
+    border: 5px solid rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+}
+.profile-border-separator{
+    border-top: 1px darkgray solid;
+    padding: 1rem 0;
+}
+.recommended-article {
+    margin: 1.5rem 1rem 0 1rem;
+    border: 5px solid rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+}
+.recommended-caption{
+    margin-top: -.01rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.recommended-table{
+    border-collapse: collapse;
+}
+.recommended-table td, .recommended-table th {
+    border: 1px solid green;
+    padding: 8px;
+}
+.recommended-table tr:nth-child(even){
+    background-color: lightgray;;
+}
+.recommended-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}

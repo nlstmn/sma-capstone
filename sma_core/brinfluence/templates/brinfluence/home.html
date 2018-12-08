@@ -2,15 +2,13 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-<!-- HOME PAGE NAV BAR -->
-<div class="home-navbar">
-    <a href="{% url 'logout' %}" id="home-button" class="logout-button">Logout</a>
-    <a href="#" id="navbar-references-contact">Contact</a>
-    <a href="#">Services</a>
-    <a class="active" href="#">Home</a>
-    <a style="float: left; padding-left: 2rem; font-size: 19px;" href="#">
-        <i class="fas fa-globe"></i>&nbsp;&nbsp;&nbsp;Social Media Analysis</a>
+<div>
+    {% include "brinfluence/tabs.html" %}
 </div>
+
+<head>
+    <title>SMA | Home</title>
+</head>
 
 <div class="homepage">
     <div class="articles">
@@ -60,37 +58,18 @@
                         Choose your brand
                     </div>
                     <div>
-                        <ul class="tabcontent" id="1">
+                        <ul class="tabcontent">
                             {% for brand in brands %}
-                            <li onclick="location.href='/brinfluence/brand/{{ brand.username }}'" style="background: url({{ brand.profile_pic_url }}) no-repeat left;">@{{ brand.username }}</li>
+                            <li class="list-hover"
+                                onclick="location.href='/brinfluence/brand/{{ brand.username }}'"
+                                style="background: url({{ brand.profile_pic_url }}) no-repeat;
+                                padding: 2rem 0 2rem 6rem;
+                                background-size: 80px;
+                                margin-top: .5rem;">
+                                @{{ brand.username }}
+                            </li>
                             {% endfor %}
-                            <!--
-                            <li id="cinephilia">@cinephilia_universe</li>
-                            <li id="ferhatmrgl">@ferhatmrgl</li>
-                            <li id="lashes">@lashes_begaim</li>
-                            <li id="deadby13">@deadby13</li>
-                            -->
                         </ul>
-                    </div>
-                    <!--
-                    <div>
-                        <ul class="tabcontent" id="2">
-                            <li id="liakan">@liakan.photo</li>
-                            <li id="lianadev">@liana.dev</li>
-                        </ul>
-                    </div>
-                    -->
-                    <div style="border-top: 1px solid black !important; padding: 1rem 0; width: 100%; text-align: center;">
-                        <div class="tab">
-                            <button class="tablinks" onclick="openCity(event, '1')" id="defaultOpen">1</button>
-                            <!--
-                            <button class="tablinks" onclick="openCity(event, '2')">2</button>
-                            <button class="tablinks" onclick="openCity(event, '3')">3</button>
-                            -->
-                        </div>
-                        <div>
-                            <button class="next-button" type="submit">Next</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -106,39 +85,18 @@
                         Choose your influencer
                     </div>
                     <div>
-                        <ul class="tabcontent" id="first">
+                        <ul class="tabcontent">
                             {% for user in users %}
-                            <li onclick="location.href='/brinfluence/influencer/{{ user.username }}'" style="background: url({{ user.profile_pic_url }}) no-repeat left;">@{{ user.username }}</li>
+                            <li class="list-hover"
+                                onclick="location.href='/brinfluence/influencer/{{ user.username }}'"
+                                style="background: url({{ user.profile_pic_url }}) no-repeat;
+                                padding: 2rem 0 2rem 6rem;
+                                background-size: 80px;
+                                margin-top: .5rem;">
+                                @{{ user.username }}
+                            </li>
                             {% endfor %}
-                            <!--
-                            <li id="ahmadchourbaji">@ahmadchourbaji</li>
-                            <li id="bjenneta">@b.jenneta</li>
-                            <li id="lianansan">@liana.nsan</li>
-                            <li id="nesval">@n.e.s_val</li>
-                            -->
                         </ul>
-                    </div>
-                    <!--
-                    <div>
-                        <ul class="tabcontent" id="second">
-                            <li id="zayed">@zayed_kotayba</li>
-                            <li id="dario">@dario.p_95</li>
-                            <li id="oompa">@0ompa_lo0mpa</li>
-                        </ul>
-                    </div>
-                    -->
-                    <div style="border-top: 1px solid black !important; padding: 1rem 0; width: 100%; text-align: center;">
-                        <div class="tab">
-                            <button class="tablinks" onclick="openCity(event, 'first')" id="influencer-defaultOpen">1
-                            </button>
-                            <!--
-                            <button class="tablinks" onclick="openCity(event, 'second')">2</button>
-                            <button class="tablinks" onclick="openCity(event, 'third')">3</button>
-                            -->
-                        </div>
-                        <div>
-                            <button class="next-button" type="submit">Next</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -237,14 +195,14 @@
 <script>
 
 // BRAND MODAL
-var modal = document.getElementById('brand-modal');
-var btn = document.getElementById("btn-brand");
-var span = document.getElementsByClassName("brand-close")[0];
-btn.onclick = function() {
-    modal.style.display = "block";
+var brand_modal = document.getElementById('brand-modal');
+var brand_btn = document.getElementById("btn-brand");
+var brand_span = document.getElementsByClassName("brand-close")[0];
+brand_btn.onclick = function() {
+    brand_modal.style.display = "block";
 }
-span.onclick = function() {
-    modal.style.display = "none";
+brand_span.onclick = function() {
+    brand_modal.style.display = "none";
 }
 
 // INFLUENCER MODAL
@@ -323,6 +281,8 @@ function openCity(evt, cityName) {
 }
 document.getElementById("defaultOpen").click();
 
+
+
 </script>
 
 <style>
@@ -395,7 +355,6 @@ document.getElementById("defaultOpen").click();
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 75px;
     left: 0;
     top: 0;
     width: 100%;
@@ -406,8 +365,7 @@ document.getElementById("defaultOpen").click();
 }
 .brand-modal-content {
     background-color: #fefefe;
-    margin: auto;
-    width: 60%;
+    margin: 3rem 10rem;
     border-radius: 10px;
 }
 
@@ -447,10 +405,17 @@ document.getElementById("defaultOpen").click();
     text-decoration: none;
     cursor: pointer;
 }
+.list-hover:hover{
+    color: lightgreen !important;
+}
 
 </style>
 
 {% else %}
+
+<head>
+    <title>SMA | Logout</title>
+</head>
 
 <!-- LOG OUT MODAL -->
 <div id="home-modal" class="home-modal">
@@ -488,6 +453,8 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
 
 </script>
 

@@ -2,22 +2,34 @@
 
 {% block content %}
 
-{{ brand.username }}
-<h3>Recommended users: </h3>
-<table>
-    <th>
-        User
-    </th>
-    <th>
-        Similarity
-    </th>
-    {% for user in recommended_users %}
-    <tr>
-        <td>{{ user.0}}</td>
-        <td>{{ user.1 }} %</td>
-    </tr>
-    </td>
-    {% endfor %}
-</table>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<div>
+    {% include "brinfluence/tabs.html" %}
+</div>
+
+<head>
+    <title>SMA | Brand Recommended</title>
+</head>
+
+<div class="recommended-article">
+    <h3 class="recommended-caption">@{{ brand.username }},<br/>recommended influencers for you are the following:</h3>
+    <table class="recommended-table">
+        <tr>
+            <th>Influencer</th>
+            <th>Similarity</th>
+        </tr>
+        {% for user in recommended_users %}
+        <tr>
+            <td>@{{ user.0}}</td>
+            <td>{{ user.1 }} %</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 
 {% endblock %}

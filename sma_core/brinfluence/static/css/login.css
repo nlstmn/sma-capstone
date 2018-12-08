@@ -2,6 +2,7 @@ html{
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     background-image: url("graph.png");
+    opacity: 0.5;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,12 +40,12 @@ html{
     align-items: center;
     align-content: center;
     justify-items: center;
-    margin-top: 10rem;
+    margin-top: 12rem;
 }
 .homepage-span-top{
     color: white;
     font-size: 60px;
-    text-shadow: 1px 2px black;
+    text-shadow: 2px 2px 2px black;
     margin-bottom: 1rem;
 }
 .homepage-span-bottom{
