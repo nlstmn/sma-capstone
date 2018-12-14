@@ -8,8 +8,9 @@ from gensim.utils import simple_preprocess
 # Yields tagged documents matrix from 2D matrix of all users or brands' sma_data
 # data_matrix = data.retrieve_sma_data(root_dir, user_type)
 def create_tagged_document(data_matrix):
-    for i, document in enumerate (data_matrix):
-        user_data = document[1] + document[2]
+    for i, document in enumerate(data_matrix):
+    #   user_data = document[1] + document[2]
+        user_data = document[1]
         list_of_words = simple_preprocess(user_data)
         yield gensim.models.doc2vec.TaggedDocument(list_of_words, [document[0]])
 
@@ -31,7 +32,8 @@ def train_data(tagged_documents, vector_size, min_count, epochs, dm):
 
 # Returns iferred vector of an user by using user data (data.retrieve_user_sma_data) from given trained model
 def get_user_vector(user_data, model):
-    data = user_data[1] + user_data[2]
+ #   data = user_data[1] + user_data[2]
+    data = user_data[1]
     list_of_words = simple_preprocess(data)
 
     return model.infer_vector(list_of_words)

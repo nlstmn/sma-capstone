@@ -32,14 +32,17 @@
 
     <div class="profile-article-recom">
         <button class="profile-recom-button" onclick="location.href='recommended/'">
-            <h3>RECOMMENDED USERS<br/><br/><i class="far fa-hand-pointer fa-lg"></i></h3>
+            <h3>RECOMMENDED BRANDS<br/><br/><i class="far fa-hand-pointer fa-lg"></i></h3>
+        </button>
+        <button class="profile-recom-button" onclick="location.href='similar/'" style="margin-top: 10%;">
+            <h3>SIMILAR INFLUENCERS<br/><br/><i class="far fa-hand-pointer fa-lg"></i></h3>
         </button>
     </div>
 </div>
 
 <div class="profile-article-bottom">
-    <span class="profile-article-caption-margin-bottom">Media: (The last 5 posts)</span>
-    {% for post in media|slice:":5" %}
+    <span class="profile-article-caption-margin-bottom">Media: (The last 100 posts)</span>
+    {% for post in media|slice:":100" %}
     <div class="profile-border-separator">
         <span class="profile-article-caption-black"><i class="far fa-edit"></i>&nbsp;&nbsp;Post:</span>
         {{ post.caption }}<br/><br/>
@@ -48,6 +51,7 @@
     </div>
     {% endfor %}
 
+    {% if comments|length > 0 %}
     <span class="profile-article-caption-margin-top">Comments: (The last 5 comments)</span>
     {% for comment in comments|slice:":5" %}
     <div class="profile-border-separator">
@@ -57,6 +61,7 @@
         @{{ comment.commented_on }}
     </div>
     {% endfor %}
+    {% endif %}
 </div>
 
 <style>

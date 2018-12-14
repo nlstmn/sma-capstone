@@ -57,6 +57,7 @@
                          style="border-bottom: 1px black solid; padding: 1rem; font-size: 25px; display: flex; justify-content: center;">
                         Choose your brand
                     </div>
+                    <span style="float: right; margin-right: 10px; font-size: 15px;">Total: {{ brands|length }}</span>
                     <div>
                         <ul class="tabcontent">
                             {% for brand in brands %}
@@ -84,6 +85,7 @@
                          style="border-bottom: 1px black solid; padding: 1rem; font-size: 25px; display: flex; justify-content: center;">
                         Choose your influencer
                     </div>
+                    <span style="float: right; margin-right: 10px; font-size: 15px;">Total: {{ users|length }}</span>
                     <div>
                         <ul class="tabcontent">
                             {% for user in users %}

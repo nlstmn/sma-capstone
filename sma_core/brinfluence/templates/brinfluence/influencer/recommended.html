@@ -18,6 +18,7 @@
 
 <div class="recommended-article">
     <h3 class="recommended-caption">@{{ user.username }},<br/>recommended brands for you are the following:</h3>
+
     <table class="recommended-table">
         <tr>
             <th>Brand</th>
@@ -25,11 +26,17 @@
         </tr>
         {% for brand in recommended_brands %}
         <tr>
-            <td>@{{ brand.0}}</td>
+            <td class="list-hover" onclick="window.open('/brinfluence/brand/{{ brand.0 }}')">@{{ brand.0}}</td>
             <td>{{ brand.1 }} %</td>
         </tr>
         {% endfor %}
     </table>
 </div>
 
+<style>
+.list-hover:hover{
+    color: #006600 !important;
+    cursor: pointer;
+}
+</style>
 {% endblock %}

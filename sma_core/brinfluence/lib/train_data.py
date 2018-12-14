@@ -9,11 +9,11 @@ tagged_users = list(doc2vec.create_tagged_document(users_data))
 tagged_brands = list(doc2vec.create_tagged_document(brands_data))
 
 print("Training users data...")
-user_model = doc2vec.train_data(tagged_users, 50, 2, 40, 1)
+user_model = doc2vec.train_data(tagged_users, 100, 2, 40, 1)
 print("User data training finished successfully.")
 
 print("\nTraining brands data...")
-brand_model = doc2vec.train_data(tagged_brands, 50, 2, 40, 1)
+brand_model = doc2vec.train_data(tagged_brands, 100, 2, 40, 1)
 print("Brand data training finished successfully.")
 
 user_model.save('models/user_model')
