@@ -144,9 +144,31 @@ def write_sma_data_to_file(path, username):
         '''
         print(username + ": sma_data has been generated.\n")
 
+
 # Returns .txt file (doc) from a user's sma_data (doc_name can be media.txt, comments.txt etc)
 def get_doc(path_to_user, doc_name):
     with open(path_to_user + "\\sma_data\\" + doc_name, 'r', encoding="utf-8") as f:
         data = f.read().replace('\n', '')
 
     return data
+
+
+# Generates list of brands and users found in dataset
+# Saves lists as users/brands.txt to dataset folder
+def generate_user_brand_list(root_dir):
+    for subdir in os.listdir(root_dir):
+        if subdir == 'Brands':
+            path = root_dir + "\\Brands"
+            brand_list = ""
+            for brand in os.listdir(path):
+                brand_list = brand_list + brand + "\n"
+
+            print(brand_list, file=open("dataset\\brands.txt", 'w', encoding="utf-8"))
+
+        if subdir == 'Users':
+            path = root_dir + "\\Users"
+            user_list = ""
+            for user in os.listdir(path):
+                user_list = user_list + user + "\n"
+
+            print(user_list, file=open("dataset\\users.txt", 'w', encoding="utf-8"))

@@ -2,6 +2,7 @@ import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 warnings.filterwarnings(action='ignore', category=UserWarning, module='gensim')
 import gensim
+import multiprocessing
 from gensim.utils import simple_preprocess
 
 
@@ -23,7 +24,8 @@ def create_tagged_document(data_matrix):
 # If dm=1, ‘distributed memory’ (PV-DM) is used,
 # otherwise, distributed bag of words (PV-DBOW) is employed
 def train_data(tagged_documents, vector_size, min_count, epochs, dm):
-    model = gensim.models.doc2vec.Doc2Vec(vector_size=vector_size, min_count=min_count, epochs=epochs, dm=dm, workers=4)
+    cores = multiprocessing.cpu_count()
+    model = gensim.models.doc2vec.Doc2Vec(vector_size=vector_size, min_count=min_count, epochs=epochs, dm=dm, workers=cores)
     model.build_vocab(tagged_documents)
     model.train(tagged_documents, total_examples=model.corpus_count, epochs=model.epochs)
 
