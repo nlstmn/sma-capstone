@@ -35,9 +35,10 @@ def get_user_media_captions(path):
     decoded_data = data_utils.remove_braille_pattern(decoded_data)
 
     decoded_data = decoded_data.lower()
-    #decoded_data = data_utils.remove_stopwords(decoded_data)
+    decoded_data = data_utils.remove_stopwords(decoded_data)
+    decoded_data = data_utils.lemmatize(decoded_data)
+    decoded_data = data_utils.remove_most_common_words(decoded_data)
     decoded_data = data_utils.remove_multiple_whitespace(decoded_data)
-    #decoded_data = data_utils.lemmatize(decoded_data)
 
     return decoded_data
 

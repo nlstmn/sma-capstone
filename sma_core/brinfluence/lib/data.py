@@ -1,5 +1,6 @@
 import os
 import shutil
+import gensim
 from brinfluence.lib import parse_data
 
 
@@ -98,6 +99,7 @@ def retrieve_user_sma_data(root_dir, user_type, username):
     return row
 
 
+# Deletes all sma_data for all users and brands
 def delete_sma_data(root_dir):
     for subdir in os.listdir(root_dir):
         if subdir == 'Brands':
@@ -172,3 +174,59 @@ def generate_user_brand_list(root_dir):
                 user_list = user_list + user + "\n"
 
             print(user_list, file=open("dataset\\users.txt", 'w', encoding="utf-8"))
+
+
+# Shuffles the data for better accuracy, mixes brands and users accounts
+# Returns matrix where it tries to make every even row to be user
+# and every odd row to be brand
+def shuffle_data(users_data, brands_data):
+    data_matrix = []
+    count = 0
+
+    if len(brands_data) <= len(users_data):
+        for i, row in enumerate(brands_data):
+            data_matrix.append(row)
+            data_matrix.append(users_data[i])
+            count = i
+
+        count = count + 1
+        while count < len(users_data):
+            data_matrix.append(users_data[count])
+            count = count + 1
+    else:
+        for i, row in enumerate(users_data):
+            data_matrix.append(row)
+            data_matrix.append(brands_data[i])
+            count = i
+
+        count = count + 1
+        while count < len(brands_data):
+            data_matrix.append(brands_data[count])
+            count = count + 1
+
+    return data_matrix
+
+
+# Saves words and their frequency based on gensim.Doc2Vec.model to dataset/common_words.txt
+# count variable represents number of most frequent words to be saved
+def generate_most_common_words(model_type, count):
+    model = gensim.models.doc2vec.Doc2Vec.load('models\\' + model_type + '_model')
+    row = []
+    matrix = []
+
+    for word, vocab_obj in model.wv.vocab.items():
+        row.append(word)
+        row.append(vocab_obj.count)
+        matrix.append(row)
+        row = []
+
+    matrix.sort(key=lambda x: x[1], reverse=True)
+    common_words = []
+    for i, row in enumerate(matrix):
+        common_words.append(row)
+        if i == int(count):
+            break
+
+    with open('dataset\common_words_' + model_type + '.txt', 'w', encoding='utf-8') as f:
+        for word in common_words:
+            f.write(word[0] + "|" + str(word[1]) + "\n")

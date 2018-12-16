@@ -36,20 +36,23 @@ def brand_profile(request, username):
 
 
 def influencer_recommended(request, username):
-    root_dir = static_data.get_dataset_root_dir()
-    model = doc2vec.get_model('brand')
-    user_data = data.retrieve_user_sma_data(root_dir, 'Users', '@' + username)
-    user_vector = doc2vec.get_user_vector(user_data, model)
+    model = doc2vec.get_model('full')
 
-    most_similar_brands = model.docvecs.most_similar(positive=[user_vector])
+    most_similar_brands = model.docvecs.most_similar(positive=[username], topn=model.corpus_count)
 
     recommended_brands = []
     row = []
-    for brand in most_similar_brands:
-        row.append(brand[0])
-        row.append(round(brand[1] * 100, 2))
-        recommended_brands.append(row)
-        row = []
+    count = 0
+    for user in most_similar_brands:
+        username_ = '@' + user[0]
+        if username_ in open('brinfluence/lib/dataset/brands.txt').read():
+            count = count + 1
+            row.append(user[0])
+            row.append(round(user[1] * 100, 2))
+            recommended_brands.append(row)
+            row = []
+            if count == 10:
+                break
 
     user = User.objects.get(username=username)
     context = {"user": user, "recommended_brands": recommended_brands}
@@ -57,20 +60,23 @@ def influencer_recommended(request, username):
 
 
 def brand_recommended(request, username):
-    root_dir = static_data.get_dataset_root_dir()
-    model = doc2vec.get_model('user')
-    brand_data = data.retrieve_user_sma_data(root_dir, 'Brands', '@' + username)
-    brand_vector = doc2vec.get_user_vector(brand_data, model)
+    model = doc2vec.get_model('full')
 
-    most_similar_users = model.docvecs.most_similar(positive=[brand_vector])
+    most_similar_users = model.docvecs.most_similar(positive=[username], topn=model.corpus_count)
 
     recommended_users = []
     row = []
+    count = 0
     for user in most_similar_users:
-        row.append(user[0])
-        row.append(round(user[1] * 100, 2))
-        recommended_users.append(row)
-        row = []
+        username_ = '@' + user[0]
+        if username_ in open('brinfluence/lib/dataset/users.txt').read():
+            count = count + 1
+            row.append(user[0])
+            row.append(round(user[1] * 100, 2))
+            recommended_users.append(row)
+            row = []
+            if count == 10:
+                break
 
     brand = Brand.objects.get(username=username)
     context = {"brand": brand, "recommended_users": recommended_users}
@@ -79,11 +85,8 @@ def brand_recommended(request, username):
 
 def influencer_similar(request, username):
     model = doc2vec.get_model('user')
-    root_dir = static_data.get_dataset_root_dir()
-    user_data = data.retrieve_user_sma_data(root_dir, 'Users', '@' + username)
-    user_vector = doc2vec.get_user_vector(user_data, model)
 
-    most_similar_influencers = model.docvecs.most_similar(positive=[user_vector])
+    most_similar_influencers = model.docvecs.most_similar(positive=[username], topn=10)
 
     similar_users = []
     row = []
@@ -100,11 +103,8 @@ def influencer_similar(request, username):
 
 def brand_similar(request, username):
     model = doc2vec.get_model('brand')
-    root_dir = static_data.get_dataset_root_dir()
-    brand_data = data.retrieve_user_sma_data(root_dir, 'Brands', '@' + username)
-    brand_vector = doc2vec.get_user_vector(brand_data, model)
 
-    most_similar_brands = model.docvecs.most_similar(positive=[brand_vector])
+    most_similar_brands = model.docvecs.most_similar(positive=[username], topn=10)
 
     similar_brands = []
     row = []

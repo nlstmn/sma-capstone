@@ -23,19 +23,30 @@ def remove_stopwords(string):
     return filtered_string
 
 
+def remove_most_common_words(string):
+    with open('dataset\\filtered_common_words.txt', 'r', encoding='utf-8-sig') as f:
+        for row in f.readlines():
+            word_freq = row.split('|')
+            word = word_freq[0]
+            regex = re.compile(r'\b' + word + r'\b')
+            string = re.sub(regex, '', string)
+
+    return string
+
+# Produces string with all root words in it (lemmatization)
 def lemmatize(string):
     wordnet_lemmatizer = WordNetLemmatizer()
     word_list = word_tokenize(string)
 
     for word in word_list:
-        string = string.replace(word, wordnet_lemmatizer.lemmatize(word))
+        string = string.replace(word, wordnet_lemmatizer.lemmatize(word, pos='v'))
 
     return string
 
 
 # Removes special characters from a string
 def remove_special_char(string):
-    char_to_erase = "\"\n\t!#$%&'()*+,-./:;<=>?@[\]‘🥰🏿^_—`{|}~🏻‍⋯’•“”️"
+    char_to_erase = "\"\n\t!#$%&'()*+,-./:;<=>?@[\]‘🥰🏿^_—`{|}–~🏻‍⋯’•“”️"
 
     for char in char_to_erase:
         string = string.replace(char, " ")

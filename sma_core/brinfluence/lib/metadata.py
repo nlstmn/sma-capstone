@@ -1,9 +1,5 @@
 import os
-import json
-import urllib
-import requests
-
-from urllib.request import urlopen
+from brinfluence.lib import static_data
 
 
 def rename_metadata(root_dir):
@@ -43,7 +39,6 @@ def rename_metadata(root_dir):
                 except FileNotFoundError:
                     pass
 
-
         if subdir == 'Users':
             path = root_dir + "\\Users"
             for user in os.listdir(path):
@@ -80,5 +75,5 @@ def rename_metadata(root_dir):
                     pass
 
 
-root_dir = "C:\\Users\hp\Desktop\TEST"
+root_dir = static_data.get_dataset_root_dir()
 rename_metadata(root_dir)
