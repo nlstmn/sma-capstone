@@ -1,0 +1,41 @@
+{% extends 'brinfluence/_layout.html' %}
+
+{% block content %}
+
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<div>
+    {% include "brinfluence/tabs.html" %}
+</div>
+
+<head>
+    <title>SMA | Similar Brands </title>
+</head>
+
+<div class="recommended-article">
+    <h3 class="recommended-caption">@{{ brand.username }},<br/>most similar brands to you are the following:</h3>
+    <table class="recommended-table">
+        <tr>
+            <th>Brand</th>
+            <th>Similarity</th>
+        </tr>
+        {% for brand in similar_brands %}
+        <tr>
+            <td class="list-hover" onclick="window.open('/brinfluence/brand/{{ brand.0 }}')">@{{ brand.0}}</td>
+            <td>{{ brand.1 }} %</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<style>
+.list-hover:hover{
+    color: #006600 !important;
+    cursor: pointer;
+}
+</style>
+{% endblock %}

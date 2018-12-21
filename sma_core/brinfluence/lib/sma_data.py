@@ -11,7 +11,7 @@ if option == 'Y':
     data.delete_sma_data(root_dir)
     print("Old sma_data has been deleted.")
 
-print("\nGenerating sma_data for all users/brands...")
+print("\nGenerating sma_data for all users/brands...\n")
 data.generate_sma_data(root_dir)
 print("\nsma_data has been successfully generated.")
 

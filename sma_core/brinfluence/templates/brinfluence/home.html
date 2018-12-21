@@ -65,6 +65,7 @@
                                    placeholder=" ⌕  Search for brands..." title="Type in a name">
                         </div>
                     </div>
+                    <span style="float: right; margin-right: 10px; font-size: 15px;">Total: {{ brands|length }}</span>
                     <div>
                         <ul class="tabcontent" id="brandtabcontent">
                             {% for brand in brands %}
@@ -100,6 +101,7 @@
                                    placeholder=" ⌕  Search for influencers..." title="Type in a name">
                         </div>
                     </div>
+                    <span style="float: right; margin-right: 10px; font-size: 15px;">Total: {{ users|length }}</span>
                     <div>
                         <ul class="tabcontent" id="tabcontent">
                             {% for user in users %}

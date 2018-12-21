@@ -23,21 +23,33 @@ def remove_stopwords(string):
     return filtered_string
 
 
+def remove_most_common_words(string):
+    with open('dataset\\filtered_common_words.txt', 'r', encoding='utf-8-sig') as f:
+        for row in f.readlines():
+            word_freq = row.split('|')
+            word = word_freq[0]
+            regex = re.compile(r'\b' + word + r'\b')
+            string = re.sub(regex, '', string)
+
+    return string
+
+# Produces string with all root words in it (lemmatization)
 def lemmatize(string):
     wordnet_lemmatizer = WordNetLemmatizer()
     word_list = word_tokenize(string)
 
     for word in word_list:
-        string = string.replace(word, wordnet_lemmatizer.lemmatize(word))
+        string = string.replace(word, wordnet_lemmatizer.lemmatize(word, pos='v'))
 
     return string
 
+
 # Removes special characters from a string
 def remove_special_char(string):
-    char_to_erase = "\"\n!#$%&'()*+,-./:;<=>?@[\]^_`{|}~️🤗🏻‍🏼⋯’•"
+    char_to_erase = "\"\n\t!#$%&'()*+,-./:;<=>?@[\]‘🥰🏿^_—`{|}–~🏻‍⋯’•“”️"
 
     for char in char_to_erase:
-        string = string.replace(char, "")
+        string = string.replace(char, " ")
 
     return string
 
@@ -51,6 +63,13 @@ def remove_numbers(string):
 # Removes user tags (@dario.p_95) from a string
 def remove_user_tags(string):
     string = re.sub(r"@\S+", "", string)
+    return string
+
+
+# Removes braille pattern from a string
+def remove_braille_pattern(string):
+    braille_pattern = re.compile("["u"\u2800""]", flags=re.UNICODE)
+    string = braille_pattern.sub(r'', string)
     return string
 
 
@@ -76,10 +95,19 @@ def remove_emojis(string):
         if char in emoji.UNICODE_EMOJI:
             string = string.replace(char, "")
 
+    emoji_pattern = re.compile("["
+                               u"\U0001F600-\U0001F64F"  # emoticons
+                               u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+                               u"\U0001F680-\U0001F6FF"  # transport & map symbols
+                               u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                               "]+", flags=re.UNICODE)
+
+    string = emoji_pattern.sub(r'',string)
+
     return string
 
 
-# Keeps \n in a string so python does not see it as a new line
-def escape_new_line(string):
-    string = string.replace("\n", "\\n")
+# Removes \n in a string
+def remove_new_line(string):
+    string = string.replace("\n", " | ")
     return string
