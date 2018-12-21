@@ -54,11 +54,19 @@
                 <div>
                     <span class="brand-close">&times;</span>
                     <div class="login-span"
-                         style="border-bottom: 1px black solid; padding: 1rem; font-size: 25px; display: flex; justify-content: center;">
+                         style="border-bottom: 1px black solid;
+                         padding: 1rem; font-size: 25px;
+                         display: flex; justify-content: center;
+                         flex-direction: column;
+                         align-items: center;">
                         Choose your brand
+                        <div>
+                            <input type="text" id="brand-input" onkeyup="brandSearch()"
+                                   placeholder=" ⌕  Search for brands..." title="Type in a name">
+                        </div>
                     </div>
                     <div>
-                        <ul class="tabcontent">
+                        <ul class="tabcontent" id="brandtabcontent">
                             {% for brand in brands %}
                             <li class="list-hover"
                                 onclick="location.href='/brinfluence/brand/{{ brand.username }}'"
@@ -81,11 +89,19 @@
                 <div>
                     <span class="influencer-close">&times;</span>
                     <div class="login-span"
-                         style="border-bottom: 1px black solid; padding: 1rem; font-size: 25px; display: flex; justify-content: center;">
+                         style="border-bottom: 1px black solid;
+                         padding: 1rem; font-size: 25px;
+                         display: flex; justify-content: center;
+                         flex-direction: column;
+                         align-items: center;">
                         Choose your influencer
+                        <div>
+                            <input type="text" id="influencer-input" onkeyup="influencerSearch()"
+                                   placeholder=" ⌕  Search for influencers..." title="Type in a name">
+                        </div>
                     </div>
                     <div>
-                        <ul class="tabcontent">
+                        <ul class="tabcontent" id="tabcontent">
                             {% for user in users %}
                             <li class="list-hover"
                                 onclick="location.href='/brinfluence/influencer/{{ user.username }}'"
@@ -215,6 +231,13 @@ influencer_btn.onclick = function() {
 influencer_span.onclick = function() {
     influencer_modal.style.display = "none";
 }
+window.onclick = function(event) {
+  if (event.target == brand_modal) {
+    brand_modal.style.display = "none";
+  }else if (event.target == influencer_modal) {
+    influencer_modal.style.display = "none";
+  }
+}
 
 // FOOTER CONTACT MODAL
 var contact_modal = document.getElementById('contact-modal');
@@ -281,7 +304,36 @@ function openCity(evt, cityName) {
 }
 document.getElementById("defaultOpen").click();
 
-
+function influencerSearch() {
+    var input, filter, ul, li, i, txtValue;
+    input = document.getElementById("influencer-input");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("tabcontent");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        txtValue = li[i].textContent || li[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+function brandSearch() {
+    var input, filter, ul, li, i, txtValue;
+    input = document.getElementById("brand-input");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("brandtabcontent");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        txtValue = li[i].textContent || li[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
 
 </script>
 
@@ -293,7 +345,6 @@ document.getElementById("defaultOpen").click();
     text-align: center;
     text-decoration: none;
     font-size: 35px;
-    cursor: pointer;
     border: none;
     border: 1px green solid;
     border-radius: 10px;
@@ -408,6 +459,13 @@ document.getElementById("defaultOpen").click();
 .list-hover:hover{
     color: lightgreen !important;
 }
+#influencer-input, #brand-input{
+    border: 1px darkgray solid !important;
+    padding: .5rem 1rem !important;
+    margin-top: .7rem !important;
+    font-size: 15px;
+}
+
 
 </style>
 
@@ -453,6 +511,7 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
 
 
 

@@ -32,7 +32,10 @@
 
     <div class="profile-article-recom">
         <button class="profile-recom-button" onclick="location.href='recommended/'">
-            <h3>RECOMMENDED USERS<br/><br/><i class="far fa-hand-pointer fa-lg"></i></h3>
+            <h3>RECOMMENDED BRANDS<br/><br/><i class="far fa-hand-pointer fa-lg"></i></h3>
+        </button>
+        <button class="profile-recom-button-last" onclick="location.href='recommended/'">
+            <h3>SIMILAR INFLUENCERS<br/><br/><i class="far fa-hand-pointer fa-lg"></i></h3>
         </button>
     </div>
 </div>
@@ -79,11 +82,27 @@
     margin: 0 1rem 0 1rem;
     border: 5px solid rgba(255, 255, 255, 0.7);
     padding: 1rem;
-    border-radius: 5px;
     margin-bottom: 1rem;
     background-color: #f2f2f2;
     display: flex;
     flex-direction: column;
+}
+.profile-recom-button{
+    border: none;
+    width: 100%;
+    background-color: #4CAF50;
+    border: 1px green solid;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: .5rem;
+}
+.profile-recom-button-last{
+    border: none;
+    width: 100%;
+    background-color: #4CAF50;
+    border: 1px green solid;
+    border-radius: 10px;
+    color: white;
 }
 </style>
 
